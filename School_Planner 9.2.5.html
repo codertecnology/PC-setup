@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>School Planner 9.2.5 for Android - Organize Your Study Life</title>
+
+<meta name="description" content="Discover School Planner 9.2.5 for Android. Organize your classes, homework, exams, grades, reminders, and daily study schedule in one place.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f6fa;
+    color: #273746;
+    line-height: 1.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: auto;
+}
+
+/* Header */
+header {
+    background: #ffffff;
+    padding: 20px 0;
+    border-bottom: 1px solid #dce8ed;
+}
+
+.logo {
+    color: #287cba;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Hero */
+.hero {
+    margin-top: 35px;
+    padding: 55px 40px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #d9f0ff, #e5fff3);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "✎";
+    position: absolute;
+    right: 35px;
+    bottom: -65px;
+    font-size: 220px;
+    color: rgba(40,124,186,.10);
+    transform: rotate(-15deg);
+}
+
+.label {
+    display: inline-block;
+    background: #287cba;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 17px;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 1.3;
+    color: #183c55;
+    max-width: 700px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 720px;
+    color: #476477;
+}
+
+.meta {
+    margin-top: 20px;
+    color: #287cba;
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    padding: 35px 0;
+}
+
+.section {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(30,70,90,.05);
+}
+
+h2 {
+    font-size: 25px;
+    color: #287cba;
+    margin-bottom: 16px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #526675;
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.feature {
+    background: #f2f9fd;
+    padding: 22px;
+    border-radius: 13px;
+    border-bottom: 4px solid #67c9ad;
+    transition: .3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(40,124,186,.10);
+}
+
+.feature .emoji {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.feature h3 {
+    color: #214e69;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Steps */
+.steps {
+    padding-left: 23px;
+}
+
+.steps li {
+    margin-bottom: 12px;
+    color: #526675;
+}
+
+/* Highlight */
+.highlight {
+    background: #e9f8f2;
+    border-left: 5px solid #54b995;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    color: #315d4e;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 45px 25px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #287cba, #45b99a);
+    margin: 30px 0;
+}
+
+.cta h2 {
+    color: white;
+    font-size: 29px;
+}
+
+.cta p {
+    color: #e8f8ff;
+}
+
+.cta a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 28px;
+    border-radius: 9px;
+    background: white;
+    color: #287cba;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.cta a:hover {
+    background: #e7f5ff;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background: #183c55;
+    color: #d8eaf4;
+    padding: 25px;
+    text-align: center;
+    font-size: 13px;
+}
+
+@media(max-width: 600px) {
+    h1 {
+        font-size: 29px;
+    }
+
+    .hero {
+        padding: 35px 23px;
+    }
+
+    .hero::after {
+        font-size: 130px;
+    }
+
+    .section {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">STUDY SPACE</div>
+    </div>
+</header>
+
+<main class="container">
+
+    <div class="hero">
+        <span class="label">EDUCATION & PRODUCTIVITY</span>
+
+        <h1>School Planner 9.2.5 - Your Smart Study Organizer</h1>
+
+        <p>
+            Make student life more organized with School Planner.
+            Manage your homework, class timetable, exams, grades,
+            and important reminders through one convenient Android app.
+        </p>
+
+        <div class="meta">
+            App Version: 9.2.5 | Platform: Android
+        </div>
+    </div>
+
+    <section class="section">
+        <h2>What Is School Planner?</h2>
+
+        <p>
+            School Planner is an educational productivity application
+            designed to help students organize their academic activities.
+            Whether you attend school, college, or university, keeping
+            track of assignments, lessons, and exams can sometimes
+            become difficult.
+        </p>
+
+        <p>
+            This application provides a central place to manage your
+            academic schedule. You can add homework, create reminders,
+            organize subjects, and check your upcoming examinations.
+        </p>
+
+        <p>
+            Instead of depending entirely on paper notebooks or
+            remembering every deadline, students can use a digital
+            planner to keep important study information organized.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>Key Features of School Planner</h2>
+
+        <p>
+            School Planner offers several tools that can make everyday
+            academic management easier.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="emoji">📅</div>
+                <h3>Class Timetable</h3>
+                <p>
+                    Create a personalized timetable and organize
+                    your daily lessons and subjects.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="emoji">📝</div>
+                <h3>Homework Management</h3>
+                <p>
+                    Add assignments, record important tasks,
+                    and keep track of upcoming deadlines.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="emoji">🎓</div>
+                <h3>Exam Reminders</h3>
+                <p>
+                    Organize examination dates and set reminders
+                    to prepare for important tests.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="emoji">📊</div>
+                <h3>Grade Management</h3>
+                <p>
+                    Record marks for different subjects and
+                    monitor your academic progress.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="emoji">🔔</div>
+                <h3>Daily Notifications</h3>
+                <p>
+                    Receive notifications about assignments,
+                    tests, and other scheduled activities.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="emoji">☁️</div>
+                <h3>Data Backup</h3>
+                <p>
+                    Use supported backup and synchronization
+                    options to help protect your study information.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Manage Your Daily Study Schedule</h2>
+
+        <p>
+            Planning your day is an important part of becoming
+            a more organized student. School Planner allows you
+            to arrange your subjects and activities so you can
+            understand what needs attention first.
+        </p>
+
+        <p>
+            You can check your upcoming lessons, review assignments,
+            and plan time for studying. A well-organized schedule
+            can help reduce confusion and make better use of your day.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>How to Use School Planner on Android</h2>
+
+        <ol class="steps">
+            <li>Install School Planner on your Android smartphone.</li>
+            <li>Open the application and complete the initial setup.</li>
+            <li>Add your subjects and create your class timetable.</li>
+            <li>Enter homework and assignments with their due dates.</li>
+            <li>Add upcoming examinations and useful reminders.</li>
+            <li>Record your grades and review your academic progress.</li>
+        </ol>
+
+        <div class="highlight">
+            <strong>Study Tip:</strong>
+            Update your planner every day. Adding new assignments
+            immediately can help you avoid forgetting important tasks.
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Who Can Use School Planner?</h2>
+
+        <p>
+            School Planner can be useful for students at different
+            education levels. School students can organize lessons
+            and homework, college students can manage assignments
+            and examination schedules, and university students can
+            keep track of classes and academic responsibilities.
+        </p>
+
+        <p>
+            Anyone who wants a more structured way to manage their
+            study routine may find a digital planner helpful.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>Benefits of Using a Digital Study Planner</h2>
+
+        <p>
+            A digital planner can make academic organization more
+            convenient. It keeps important information in one place
+            and makes it easier to review upcoming responsibilities.
+        </p>
+
+        <p>
+            Students can spend less time trying to remember deadlines
+            and more time focusing on learning, revision, and completing
+            their assignments.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>Final Thoughts</h2>
+
+        <p>
+            School Planner 9.2.5 is a student-focused application
+            designed to bring important academic activities together.
+            Its timetable, homework organizer, exam reminders,
+            and grade management tools can help students create
+            a more organized study routine.
+        </p>
+
+        <p>
+            If you want to manage your educational tasks using
+            your smartphone, School Planner is an option worth
+            exploring. Check the available features and compatibility
+            before installing a particular version.
+        </p>
+    </section>
+
+    <div class="cta">
+        <h2>Discover More Useful Applications</h2>
+
+        <p>
+            Explore more Android apps, productivity tools,
+            and software for your everyday needs.
+        </p>
+
+        <a href="https://ajew5v2208263hw.cfd/?s=3974&g=52&q=DownloadLink"
+           target="_blank"
+           rel="nofollow sponsored noopener">
+            Explore More Applications →
+        </a>
+    </div>
+
+</main>
+
+<footer>
+    © 2026 Study Space | All Rights Reserved
+</footer>
+
+</body>
+</html>
