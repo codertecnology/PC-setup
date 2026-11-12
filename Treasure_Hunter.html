@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treasure Hunter - Exciting Adventure and Exploration Game</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background: #f5f1e8;
+    color: #302b22;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 35px auto;
+    padding: 20px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 25px;
+    background: linear-gradient(135deg, #263e32, #426c4c);
+    padding: 55px 40px;
+    border-radius: 25px;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-label {
+    color: #e8bd70;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 18px 0;
+}
+
+.hero p {
+    color: #e1e9dc;
+    font-size: 16px;
+}
+
+.hero-art {
+    text-align: center;
+    font-size: 145px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    margin-top: 25px;
+    background: #e9b85e;
+    color: #263e32;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #fff0c9;
+    transform: translateY(-4px);
+}
+
+.section {
+    background: #fffdf8;
+    padding: 35px;
+    margin-top: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(70,60,35,0.05);
+}
+
+.section-label {
+    color: #a87831;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.section h2 {
+    color: #365b3f;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.section p {
+    color: #716c60;
+    margin-bottom: 13px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.feature {
+    background: #f3f0e5;
+    padding: 25px 20px;
+    border-radius: 12px;
+    border-bottom: 4px solid #b58a45;
+}
+
+.feature-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    color: #365b3f;
+    margin-bottom: 9px;
+    font-size: 18px;
+}
+
+.feature p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.journey {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 22px;
+}
+
+.journey-box {
+    padding: 30px;
+    border-radius: 13px;
+    background: #e8ddc4;
+}
+
+.journey-box:nth-child(2) {
+    background: #dce9d9;
+}
+
+.journey-box h3 {
+    color: #365b3f;
+    margin-bottom: 12px;
+}
+
+.journey-box p {
+    color: #625e52;
+    margin: 0;
+}
+
+.highlight {
+    background: #365b3f;
+    color: white;
+    margin-top: 25px;
+    padding: 35px;
+    border-radius: 15px;
+}
+
+.highlight h2 {
+    color: #f2c978;
+    margin-bottom: 12px;
+}
+
+.highlight p {
+    color: #e0e9df;
+}
+
+.cta {
+    margin-top: 28px;
+    padding: 55px 25px;
+    text-align: center;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #a66b31, #60452b);
+    color: white;
+}
+
+.cta h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.cta p {
+    color: #f4e7d1;
+}
+
+.cta .btn {
+    background: #fff0c9;
+}
+
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    color: #8d887c;
+    font-size: 13px;
+}
+
+@media(max-width: 750px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 22px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-art {
+        width: 170px;
+        height: 170px;
+        font-size: 100px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .journey {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="hero">
+
+        <div class="hero-content">
+            <div class="hero-label">DISCOVER • EXPLORE • COLLECT</div>
+
+            <h1>Treasure Hunter</h1>
+
+            <p>
+                Step into an exciting world of exploration,
+                hidden treasures, mysterious locations, and
+                unforgettable adventures. Discover new places
+                and experience the thrill of searching for
+                valuable rewards.
+            </p>
+
+            <a href="http://pcsetup.click/" class="btn"
+               target="_blank" rel="noopener noreferrer">
+               Explore Now
+            </a>
+        </div>
+
+        <div class="hero-art">💎</div>
+
+    </header>
+
+    <section class="section">
+
+        <div class="section-label">GAME INTRODUCTION</div>
+
+        <h2>What Is Treasure Hunter?</h2>
+
+        <p>
+            Treasure Hunter is an adventure-themed gaming
+            concept built around exploration, discovery,
+            and the excitement of finding hidden rewards.
+            It represents a style of gameplay where players
+            travel through different environments and search
+            for valuable items.
+        </p>
+
+        <p>
+            From mysterious caves to forgotten locations,
+            treasure-hunting adventures create opportunities
+            for discovery and problem-solving. Players can
+            enjoy exploring different areas while experiencing
+            the excitement of uncovering something unexpected.
+        </p>
+
+    </section>
+
+    <section class="section">
+
+        <div class="section-label">EXPLORE THE UNKNOWN</div>
+
+        <h2>Enter a World Full of Mystery</h2>
+
+        <p>
+            Exploration is one of the most exciting parts
+            of treasure-themed games. Different locations,
+            hidden paths, and interesting environments
+            encourage players to investigate their surroundings.
+        </p>
+
+        <p>
+            Every discovery can add another layer of excitement.
+            Players who enjoy adventure games often appreciate
+            the combination of exploration, observation,
+            and rewards.
+        </p>
+
+    </section>
+
+    <section class="section">
+
+        <div class="section-label">ADVENTURE HIGHLIGHTS</div>
+
+        <h2>Interesting Features of Treasure Hunter</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature">
+                <div class="feature-icon">🗺️</div>
+                <h3>Exploration</h3>
+                <p>
+                    Discover different environments and
+                    investigate mysterious locations.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💎</div>
+                <h3>Hidden Treasures</h3>
+                <p>
+                    Experience the excitement of searching
+                    for valuable objects and rewards.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🏝️</div>
+                <h3>New Environments</h3>
+                <p>
+                    Explore adventure-inspired locations
+                    with different surroundings.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🧩</div>
+                <h3>Problem Solving</h3>
+                <p>
+                    Use observation and logical thinking
+                    to overcome different challenges.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🏆</div>
+                <h3>Rewards</h3>
+                <p>
+                    Enjoy the satisfaction of completing
+                    objectives and discovering new items.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🧭</div>
+                <h3>Adventure Journey</h3>
+                <p>
+                    Experience an engaging journey filled
+                    with exploration and discovery.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <div class="section-label">THE ADVENTURE</div>
+
+        <h2>What Makes Treasure Hunting Exciting?</h2>
+
+        <div class="journey">
+
+            <div class="journey-box">
+                <h3>Discover Hidden Places</h3>
+
+                <p>
+                    Searching unfamiliar locations creates
+                    curiosity and encourages players to
+                    explore every part of their surroundings.
+                    Discovering something unexpected can
+                    make each adventure memorable.
+                </p>
+            </div>
+
+            <div class="journey-box">
+                <h3>Collect Valuable Rewards</h3>
+
+                <p>
+                    Collecting items and completing objectives
+                    gives players a sense of achievement.
+                    Rewards can also provide motivation
+                    to continue exploring.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="highlight">
+
+        <h2>Tips for an Enjoyable Adventure</h2>
+
+        <p>
+            Take your time to explore different areas,
+            pay attention to environmental details,
+            and approach challenges carefully. A patient
+            and observant approach can make exploration
+            more rewarding.
+        </p>
+
+    </section>
+
+    <section class="section">
+
+        <div class="section-label">PLAYER EXPERIENCE</div>
+
+        <h2>Who Will Enjoy Treasure Hunter Games?</h2>
+
+        <p>
+            Treasure-themed adventure games can appeal
+            to players who enjoy exploration, puzzles,
+            discovery, and collecting virtual rewards.
+            They offer an interesting alternative to
+            traditional racing and action games.
+        </p>
+
+        <p>
+            Whether you enjoy discovering mysterious places
+            or solving challenges, this gaming genre offers
+            an entertaining way to experience virtual adventures.
+        </p>
+
+    </section>
+
+    <section class="section">
+
+        <div class="section-label">FINAL THOUGHTS</div>
+
+        <h2>Is Treasure Hunter Worth Exploring?</h2>
+
+        <p>
+            Treasure Hunter represents an exciting adventure
+            theme that combines exploration, mystery,
+            discovery, and rewards. Its concept is appealing
+            to players who enjoy investigating different
+            environments and completing interesting objectives.
+        </p>
+
+        <p>
+            If you like adventure-based gameplay and the
+            excitement of finding hidden treasures,
+            Treasure Hunter is a title worth exploring.
+        </p>
+
+    </section>
+
+    <section class="cta">
+
+        <h2>Start Your Treasure Hunting Adventure!</h2>
+
+        <p>
+            Discover exciting digital entertainment
+            and explore more gaming experiences.
+        </p>
+
+        <a href="http://pcsetup.click/" class="btn"
+           target="_blank" rel="noopener noreferrer">
+           Download Now
+        </a>
+
+    </section>
+
+    <footer>
+        Treasure Hunter | Adventure & Exploration Gaming
+    </footer>
+
+</div>
+
+</body>
+</html>
