@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>jAlbum Download - Create Beautiful Photo Galleries</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f0ec;
+    color: #252525;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 1120px;
+    margin: 35px auto;
+    padding: 20px;
+}
+
+/* Header */
+.hero {
+    background: #242424;
+    color: white;
+    border-radius: 8px;
+    padding: 65px 45px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 7px solid #f08a38;
+}
+
+.hero-label {
+    color: #ffad65;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 45px;
+    max-width: 700px;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero p {
+    color: #c9c9c9;
+    max-width: 650px;
+    font-size: 17px;
+}
+
+.hero-icon {
+    position: absolute;
+    right: 40px;
+    bottom: 10px;
+    font-size: 145px;
+    opacity: 0.12;
+}
+
+/* Article */
+.article {
+    background: white;
+    margin-top: 25px;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+}
+
+.article h2 {
+    font-size: 27px;
+    color: #252525;
+    margin: 35px 0 15px;
+}
+
+.article h2:first-child {
+    margin-top: 0;
+}
+
+.article h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    background: #f08a38;
+    margin-top: 8px;
+}
+
+.article p {
+    color: #606060;
+    margin-bottom: 17px;
+    font-size: 16px;
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.stat {
+    flex: 1;
+    padding: 20px;
+    background: #292929;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+    color: #ff9c50;
+    font-size: 21px;
+}
+
+.stat span {
+    font-size: 13px;
+    color: #ddd;
+}
+
+/* Gallery Style Cards */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+    margin: 25px 0;
+}
+
+.gallery-card {
+    background: #f5f3ef;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e5e1da;
+}
+
+.gallery-top {
+    background: #343434;
+    color: #ffab68;
+    padding: 23px 15px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.gallery-content {
+    padding: 19px;
+}
+
+.gallery-content h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: #282828;
+}
+
+.gallery-content p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Workflow */
+.workflow {
+    border-left: 3px solid #ef8b3d;
+    padding-left: 25px;
+    margin: 25px 0;
+}
+
+.step {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.step h3 {
+    color: #c56824;
+    margin-bottom: 5px;
+}
+
+/* Highlight */
+.note {
+    background: #fff3e8;
+    border-left: 5px solid #f08a38;
+    padding: 24px;
+    margin: 25px 0;
+    border-radius: 4px;
+}
+
+.note h3 {
+    color: #9b4e18;
+    margin-bottom: 8px;
+}
+
+/* Lists */
+.article ul {
+    padding-left: 25px;
+    color: #606060;
+    margin-bottom: 20px;
+}
+
+.article li {
+    margin-bottom: 9px;
+}
+
+/* Download */
+.download {
+    background: #252525;
+    color: white;
+    margin-top: 40px;
+    text-align: center;
+    padding: 50px 25px;
+    border-radius: 8px;
+    border-top: 6px solid #f08a38;
+}
+
+.download h2 {
+    color: white;
+    margin: 0 0 12px;
+}
+
+.download h2::after {
+    display: none;
+}
+
+.download p {
+    color: #c9c9c9;
+}
+
+.download-button {
+    display: inline-block;
+    background: #f08a38;
+    color: #222;
+    padding: 15px 36px;
+    margin-top: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.download-button:hover {
+    background: #fff;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 25px;
+    color: #888;
+    font-size: 13px;
+}
+
+@media(max-width:750px) {
+    .hero {
+        padding: 40px 25px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .article {
+        padding: 23px;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-icon {
+        font-size: 90px;
+        right: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-label">Photography & Creative Software</div>
+
+        <h1>jAlbum: Turn Your Photos Into Beautiful Online Galleries</h1>
+
+        <p>
+            Discover a creative way to organize, edit, customize,
+            and publish your favorite photographs with jAlbum.
+            Build attractive photo galleries without manually
+            creating website pages.
+        </p>
+
+        <div class="hero-icon">📷</div>
+    </header>
+
+    <!-- ARTICLE CONTENT -->
+    <main class="article">
+
+        <h2>What Is jAlbum?</h2>
+
+        <p>
+            Photographs are an important way to preserve memories,
+            showcase creative projects, and share experiences with
+            other people. However, managing hundreds or thousands
+            of images can become difficult without the right tools.
+            jAlbum is a desktop photo gallery software application
+            that helps users transform their image collections
+            into attractive online photo albums.
+        </p>
+
+        <p>
+            Instead of manually designing every gallery page,
+            users can import their pictures, organize them into
+            folders, select a visual theme, and generate a complete
+            photo gallery. The software also supports video
+            galleries and provides options for customizing the
+            presentation of digital content.
+        </p>
+
+        <p>
+            jAlbum is available for Windows, macOS, and Linux.
+            Users can publish their finished galleries to their
+            own websites or use the jAlbum hosting service.
+        </p>
+
+        <!-- STATS -->
+        <div class="stats">
+            <div class="stat">
+                <strong>3</strong>
+                <span>Desktop Platforms</span>
+            </div>
+
+            <div class="stat">
+                <strong>Gallery</strong>
+                <span>Creation Tool</span>
+            </div>
+
+            <div class="stat">
+                <strong>Custom</strong>
+                <span>Gallery Themes</span>
+            </div>
+        </div>
+
+        <h2>Main Features of jAlbum</h2>
+
+        <p>
+            jAlbum offers a collection of photography and gallery
+            management tools. These features are designed to help
+            users create attractive photo collections while keeping
+            the editing and publishing process organized.
+        </p>
+
+        <div class="gallery">
+
+            <div class="gallery-card">
+                <div class="gallery-top">🖼️</div>
+                <div class="gallery-content">
+                    <h3>Photo Gallery Creation</h3>
+                    <p>
+                        Convert image collections into organized
+                        web galleries with thumbnails, captions,
+                        and individual album pages.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="gallery-top">🎨</div>
+                <div class="gallery-content">
+                    <h3>Custom Gallery Skins</h3>
+                    <p>
+                        Choose from different gallery themes and
+                        customize the appearance of your albums
+                        according to your creative preferences.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="gallery-top">✂️</div>
+                <div class="gallery-content">
+                    <h3>Built-in Image Editing</h3>
+                    <p>
+                        Crop, sharpen, adjust image levels,
+                        apply watermarks, and perform basic
+                        editing tasks.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="gallery-top">📁</div>
+                <div class="gallery-content">
+                    <h3>Photo Organization</h3>
+                    <p>
+                        Arrange photographs into folders,
+                        sort images, add captions, and manage
+                        large collections more conveniently.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="gallery-top">🌐</div>
+                <div class="gallery-content">
+                    <h3>Website Publishing</h3>
+                    <p>
+                        Upload finished galleries to your
+                        own web hosting account using the
+                        built-in FTP publishing functionality.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="gallery-top">🔒</div>
+                <div class="gallery-content">
+                    <h3>Private Galleries</h3>
+                    <p>
+                        Use supported password-protection
+                        features to restrict access to selected
+                        photo collections.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>How Does jAlbum Work?</h2>
+
+        <p>
+            One of the useful aspects of jAlbum is its straightforward
+            gallery creation workflow. You do not need to manually
+            write HTML code to generate a basic photo album.
+            The application handles the gallery generation process.
+        </p>
+
+        <div class="workflow">
+
+            <div class="step">
+                <h3>Step 01 - Import Your Photos</h3>
+                <p>
+                    Start by adding photographs and supported
+                    video files from your computer. You can
+                    drag and drop files directly into your project.
+                </p>
+            </div>
+
+            <div class="step">
+                <h3>Step 02 - Organize Your Collection</h3>
+                <p>
+                    Create folders, arrange images, rotate
+                    photographs, and add captions to make
+                    your album easier to browse.
+                </p>
+            </div>
+
+            <div class="step">
+                <h3>Step 03 - Choose a Gallery Design</h3>
+                <p>
+                    Select a skin that matches your preferred
+                    presentation style. Customize its appearance
+                    and available settings.
+                </p>
+            </div>
+
+            <div class="step">
+                <h3>Step 04 - Generate Your Album</h3>
+                <p>
+                    Use the Make Album option to generate your
+                    photo gallery and preview its appearance
+                    before publishing.
+                </p>
+            </div>
+
+            <div class="step">
+                <h3>Step 05 - Publish and Share</h3>
+                <p>
+                    Upload your finished gallery to your own
+                    website through FTP or publish it using
+                    the available jAlbum hosting options.
+                </p>
+            </div>
+
+        </div>
+
+        <h2>Who Should Use jAlbum?</h2>
+
+        <p>
+            jAlbum can be useful for different types of users
+            who want more control over how their photographs
+            are displayed online.
+        </p>
+
+        <ul>
+            <li><strong>Photographers:</strong> Create professional-looking portfolios and showcase photography projects.</li>
+
+            <li><strong>Families:</strong> Organize holiday pictures, celebrations, and personal memories into albums.</li>
+
+            <li><strong>Businesses:</strong> Present product photographs and visual projects through customized galleries.</li>
+
+            <li><strong>Artists:</strong> Build online portfolios to display creative work.</li>
+
+            <li><strong>Organizations:</strong> Organize event photographs and share collections with selected audiences.</li>
+        </ul>
+
+        <div class="note">
+            <h3>Flexible Photo Publishing</h3>
+            <p>
+                One notable advantage of jAlbum is that you are
+                not restricted to publishing your galleries on
+                a single hosting platform. You can use your own
+                website hosting account and retain greater
+                control over where your galleries are stored.
+            </p>
+        </div>
+
+        <h2>Advantages and Things to Consider</h2>
+
+        <p>
+            Before choosing any photo gallery application,
+            it is useful to understand its benefits and
+            possible limitations.
+        </p>
+
+        <ul>
+            <li>Helps create photo galleries without manually coding web pages.</li>
+            <li>Provides different themes and customization options.</li>
+            <li>Includes useful image editing and organization tools.</li>
+            <li>Supports publishing to personal websites.</li>
+            <li>Offers Windows, macOS, and Linux desktop versions.</li>
+            <li>The free license has a limit of 24 objects per gallery.</li>
+            <li>Some advanced features require a paid license.</li>
+        </ul>
+
+        <h2>Final Thoughts</h2>
+
+        <p>
+            jAlbum is a practical solution for users who want
+            to transform ordinary photo collections into
+            organized and visually appealing online galleries.
+            Its combination of image organization, editing,
+            customizable skins, and publishing tools makes
+            the gallery creation process more convenient.
+        </p>
+
+        <p>
+            Whether you are a photographer building an online
+            portfolio, a family organizing memories, or a
+            business displaying visual content, jAlbum provides
+            a flexible way to present your images. Its desktop
+            workflow and publishing options make it worth
+            exploring if you want greater control over your
+            online photo galleries.
+        </p>
+
+        <!-- WEBSITE PROMOTION -->
+        <section class="download">
+
+            <h2>Discover More Useful PC Software</h2>
+
+            <p>
+                Explore more desktop applications, creative
+                tools, and software resources. Visit PC Setup
+                to discover useful software for your computer.
+            </p>
+
+            <a href="http://pcsetup.click/"
+               class="download-button"
+               target="_blank"
+               rel="noopener noreferrer">
+                Explore More Software →
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        © 2026 PC Setup | Software, Photography & Technology
+    </footer>
+
+</div>
+
+</body>
+</html>
