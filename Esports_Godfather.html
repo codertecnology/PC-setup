@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esports Godfather - Gaming Management Game</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #090d18;
+    color: #e9efff;
+    padding: 25px 15px;
+    line-height: 1.8;
+}
+
+.esports-wrapper {
+    max-width: 900px;
+    margin: auto;
+    background: #111a2d;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #263d63;
+    box-shadow: 0 0 30px rgba(0, 170, 255, 0.12);
+}
+
+.hero {
+    text-align: center;
+    padding: 55px 25px;
+    background: linear-gradient(120deg, #102c55, #251044, #101a36);
+    position: relative;
+    border-bottom: 3px solid #00d9ff;
+}
+
+.hero small {
+    color: #00e5ff;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin: 15px 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #00bfff;
+}
+
+.hero p {
+    color: #c3d5f5;
+    font-size: 16px;
+}
+
+.content {
+    padding: 32px;
+}
+
+.section-title {
+    color: #00ddff;
+    font-size: 23px;
+    margin: 25px 0 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content p {
+    color: #c3cee3;
+    margin-bottom: 17px;
+    font-size: 15px;
+}
+
+.game-panel {
+    background: #192740;
+    border-left: 4px solid #00ddff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.game-panel h3 {
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, #1b2a45, #151e33);
+    padding: 20px;
+    border: 1px solid #30486b;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    border-color: #00ddff;
+    transform: translateY(-4px);
+}
+
+.feature-card span {
+    font-size: 27px;
+}
+
+.feature-card h3 {
+    color: #00ddff;
+    margin: 8px 0;
+    font-size: 17px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer {
+    background: #080f1e;
+    text-align: center;
+    padding: 38px 20px;
+    border-top: 1px solid #263d63;
+}
+
+.footer h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #aebed9;
+    margin-bottom: 22px;
+}
+
+.website-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #00bfff, #6655ff);
+    color: white;
+    text-decoration: none;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 18px rgba(0, 191, 255, 0.35);
+    transition: 0.3s;
+}
+
+.website-btn:hover {
+    box-shadow: 0 0 30px #00bfff;
+    transform: scale(1.05);
+}
+
+@media(max-width: 600px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="esports-wrapper">
+
+    <header class="hero">
+        <small>ULTIMATE ESPORTS MANAGEMENT</small>
+        <h1>Esports Godfather</h1>
+        <p>Build Your Team. Compete. Become a Champion.</p>
+    </header>
+
+    <main class="content">
+
+        <h2 class="section-title">About Esports Godfather</h2>
+
+        <p>
+        Esports Godfather is a strategy and management simulation
+        game focused on the exciting world of competitive esports.
+        Players take on the role of an esports team manager and
+        work to build a successful professional gaming organization.
+        </p>
+
+        <p>
+        From recruiting talented players to developing team
+        strategies, the game allows you to experience the
+        challenges of managing an esports team and competing
+        in tournaments.
+        </p>
+
+        <div class="game-panel">
+            <h3>Become an Esports Manager</h3>
+            <p>
+            Create your own team, discover talented players,
+            improve their abilities, and guide them through
+            competitive matches on the road to victory.
+            </p>
+        </div>
+
+        <h2 class="section-title">Main Game Features</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <span>🎮</span>
+                <h3>Team Management</h3>
+                <p>Build your esports organization and manage
+                your players throughout the competition.</p>
+            </div>
+
+            <div class="feature-card">
+                <span>🏆</span>
+                <h3>Tournaments</h3>
+                <p>Participate in competitive events and
+                challenge other teams for championship titles.</p>
+            </div>
+
+            <div class="feature-card">
+                <span>🧠</span>
+                <h3>Strategy Planning</h3>
+                <p>Develop tactical plans and make important
+                decisions to improve your team's performance.</p>
+            </div>
+
+            <div class="feature-card">
+                <span>⭐</span>
+                <h3>Player Development</h3>
+                <p>Train your players, improve their skills,
+                and build a stronger competitive lineup.</p>
+            </div>
+
+        </div>
+
+        <h2 class="section-title">Why Play Esports Godfather?</h2>
+
+        <p>
+        This game is an interesting choice for players who enjoy
+        esports, team management, strategy, and competitive
+        gaming simulations. It combines management decisions
+        with tournament challenges to create an engaging
+        gaming experience.
+        </p>
+
+    </main>
+
+    <footer class="footer">
+        <h2>Discover More Games & Software</h2>
+        <p>
+        Explore more PC games, applications, and useful
+        technology information on our website.
+        </p>
+
+        <a href="http://pcsetup.click/"
+           class="website-btn"
+           target="_blank"
+           rel="noopener noreferrer">
+           VISIT PC SETUP →
+        </a>
+    </footer>
+
+</div>
+
+</body>
+</html>
