@@ -1,0 +1,675 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QGIS Software - Create, Analyze and Explore Maps</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #edf2ef;
+    color: #263b35;
+    line-height: 1.8;
+}
+
+.wrapper {
+    max-width: 1150px;
+    margin: 35px auto;
+    padding: 18px;
+}
+
+/* HERO */
+.hero {
+    background: #102d27;
+    color: white;
+    padding: 65px 45px;
+    border-radius: 25px 5px 25px 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border: 2px solid rgba(100,220,160,0.2);
+    border-radius: 50%;
+    right: -80px;
+    top: -110px;
+    box-shadow: 0 0 0 35px rgba(100,220,160,0.04),
+                0 0 0 70px rgba(100,220,160,0.03);
+}
+
+.hero-tag {
+    color: #80e4ac;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    font-size: 44px;
+    max-width: 720px;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero p {
+    color: #c3d9ce;
+    max-width: 700px;
+    font-size: 17px;
+}
+
+/* CONTENT */
+.article {
+    background: #ffffff;
+    margin-top: 25px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(20,60,40,0.06);
+}
+
+.article h2 {
+    font-size: 27px;
+    color: #174b39;
+    margin: 35px 0 15px;
+}
+
+.article h2:first-child {
+    margin-top: 0;
+}
+
+.article h2::before {
+    content: "◆";
+    color: #38a879;
+    font-size: 16px;
+    margin-right: 12px;
+}
+
+.article p {
+    color: #62736b;
+    font-size: 16px;
+    margin-bottom: 17px;
+}
+
+/* DATA STRIP */
+.data-strip {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.data-item {
+    padding: 22px;
+    background: #eaf5ef;
+    border-radius: 10px;
+    border-bottom: 4px solid #38a879;
+}
+
+.data-item strong {
+    display: block;
+    color: #174b39;
+    font-size: 20px;
+}
+
+.data-item span {
+    font-size: 13px;
+    color: #74877d;
+}
+
+/* FEATURE GRID */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.feature {
+    padding: 25px;
+    background: #f5f9f6;
+    border: 1px solid #dcebe1;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.feature:hover {
+    background: #eaf5ef;
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    color: #1c694d;
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.feature p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* MAP SECTION */
+.map-section {
+    background: #153d34;
+    color: white;
+    border-radius: 14px;
+    padding: 30px;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-section h3 {
+    color: #8ce5b4;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.map-section p {
+    color: #d0e2d8;
+}
+
+/* STEPS */
+.steps {
+    margin: 25px 0;
+}
+
+.step {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e4ebe6;
+}
+
+.step-number {
+    min-width: 48px;
+    height: 48px;
+    background: #174b39;
+    color: #91e6b7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step h3 {
+    color: #22674c;
+    margin-bottom: 5px;
+}
+
+.step p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* INFORMATION BOX */
+.info-box {
+    background: #eff8f2;
+    padding: 25px;
+    border-left: 5px solid #38a879;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.info-box h3 {
+    color: #18583e;
+    margin-bottom: 8px;
+}
+
+/* LISTS */
+.article ul {
+    padding-left: 25px;
+    color: #62736b;
+    margin-bottom: 20px;
+}
+
+.article li {
+    margin-bottom: 10px;
+}
+
+/* DOWNLOAD */
+.promo {
+    background: linear-gradient(120deg,#102d27,#17624a);
+    color: white;
+    padding: 55px 25px;
+    margin-top: 40px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo h2 {
+    color: white;
+    margin: 0 0 12px;
+    font-size: 29px;
+}
+
+.promo h2::before {
+    content: "";
+}
+
+.promo p {
+    color: #d0e7da;
+}
+
+.promo-button {
+    display: inline-block;
+    padding: 15px 38px;
+    background: #85e3ac;
+    color: #103c2a;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+    margin-top: 18px;
+    transition: 0.3s;
+}
+
+.promo-button:hover {
+    background: #ffffff;
+    transform: scale(1.04);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+    color: #819087;
+}
+
+/* RESPONSIVE */
+@media(max-width:700px) {
+    .hero {
+        padding: 40px 25px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .article {
+        padding: 23px;
+    }
+
+    .data-strip,
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step {
+        gap: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- HERO SECTION -->
+<header class="hero">
+
+    <div class="hero-tag">GEOGRAPHIC INFORMATION SYSTEM</div>
+
+    <h1>QGIS: Explore the World Through Powerful Digital Mapping</h1>
+
+    <p>
+        Discover a powerful open-source GIS application
+        designed for creating maps, analyzing geographical
+        information, editing spatial data, and visualizing
+        locations with precision.
+    </p>
+
+</header>
+
+<main class="article">
+
+    <!-- INTRODUCTION -->
+    <h2>What Is QGIS?</h2>
+
+    <p>
+        Geographic information plays an important role in
+        modern industries, urban development, environmental
+        research, transportation, agriculture, and scientific
+        projects. Understanding geographical data requires
+        tools that can organize location-based information
+        and turn complex datasets into meaningful visual maps.
+    </p>
+
+    <p>
+        QGIS, also known as Quantum Geographic Information
+        System, is a free and open-source Geographic Information
+        System (GIS) application. It allows users to view,
+        create, edit, analyze, and share geospatial information
+        through an interactive desktop environment.
+    </p>
+
+    <p>
+        Unlike basic map applications, QGIS provides advanced
+        tools for working with different geographical data
+        formats, customizing map appearances, performing
+        spatial analysis, and producing professional map
+        layouts. It is available for Windows, macOS, and Linux.
+    </p>
+
+    <!-- QUICK INFORMATION -->
+    <div class="data-strip">
+
+        <div class="data-item">
+            <strong>Free & Open Source</strong>
+            <span>Software License</span>
+        </div>
+
+        <div class="data-item">
+            <strong>Cross Platform</strong>
+            <span>Windows, macOS & Linux</span>
+        </div>
+
+        <div class="data-item">
+            <strong>GIS Software</strong>
+            <span>Mapping & Spatial Analysis</span>
+        </div>
+
+    </div>
+
+    <!-- FEATURES -->
+    <h2>Important Features of QGIS</h2>
+
+    <p>
+        QGIS includes a comprehensive collection of tools
+        that help professionals, students, researchers,
+        and mapping enthusiasts work with spatial data.
+        Its customizable interface and extensive plugin
+        ecosystem make it suitable for many different
+        geographical projects.
+    </p>
+
+    <div class="feature-grid">
+
+        <div class="feature">
+            <div class="feature-icon">🗺️</div>
+            <h3>Advanced Map Creation</h3>
+            <p>
+                Create detailed maps using different layers,
+                symbols, colors, labels, and graphical elements.
+                Customize map layouts for digital and printed
+                presentations.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">📍</div>
+            <h3>Spatial Data Editing</h3>
+            <p>
+                Create and modify geographical features
+                including points, lines, polygons, and other
+                supported spatial data structures.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3>Geospatial Analysis</h3>
+            <p>
+                Analyze location-based information using
+                processing tools to identify patterns,
+                relationships, and geographical trends.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🧩</div>
+            <h3>Plugin Integration</h3>
+            <p>
+                Extend application functionality with
+                community-developed plugins for additional
+                mapping, data processing, and specialized
+                GIS workflows.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🛰️</div>
+            <h3>Raster and Vector Support</h3>
+            <p>
+                Work with raster imagery, vector layers,
+                elevation information, and various
+                geographical data sources.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🖨️</div>
+            <h3>Professional Map Layouts</h3>
+            <p>
+                Prepare detailed map compositions with
+                legends, titles, scale bars, and other
+                elements for professional reporting.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- SPECIAL SECTION -->
+    <div class="map-section">
+
+        <h3>Turn Geographic Data Into Useful Information</h3>
+
+        <p>
+            QGIS helps transform raw geographical datasets
+            into understandable visual information. Users
+            can combine multiple map layers, perform spatial
+            operations, and create customized visualizations
+            for research, planning, and decision-making.
+        </p>
+
+    </div>
+
+    <!-- WORKFLOW -->
+    <h2>How to Get Started with QGIS</h2>
+
+    <p>
+        Beginners can start using QGIS by installing the
+        application and creating a simple mapping project.
+        The following steps provide an introduction to
+        its basic workflow.
+    </p>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="step-number">01</div>
+            <div>
+                <h3>Install QGIS</h3>
+                <p>
+                    Download the appropriate version for
+                    your operating system and complete
+                    the installation process.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">02</div>
+            <div>
+                <h3>Create a New Project</h3>
+                <p>
+                    Open QGIS and create a new project.
+                    Select an appropriate coordinate
+                    reference system for your work.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">03</div>
+            <div>
+                <h3>Import Geographic Data</h3>
+                <p>
+                    Add supported vector, raster, or
+                    database layers to your project
+                    using the available data sources.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">04</div>
+            <div>
+                <h3>Customize Your Map</h3>
+                <p>
+                    Adjust colors, symbols, labels,
+                    layer visibility, and other
+                    presentation settings.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">05</div>
+            <div>
+                <h3>Analyze and Export</h3>
+                <p>
+                    Use processing tools to analyze
+                    spatial information and export
+                    your completed map or layout.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- USE CASES -->
+    <h2>Where Is QGIS Used?</h2>
+
+    <p>
+        GIS technology is used across many industries
+        because geographical information can help
+        organizations understand locations, resources,
+        infrastructure, and environmental changes.
+    </p>
+
+    <ul>
+        <li><strong>Urban Planning:</strong> Analyze land use, infrastructure, roads, and development areas.</li>
+
+        <li><strong>Agriculture:</strong> Visualize farmland, soil information, and agricultural patterns.</li>
+
+        <li><strong>Environmental Research:</strong> Study vegetation, water resources, and environmental changes.</li>
+
+        <li><strong>Transportation:</strong> Examine road networks, routes, and geographical accessibility.</li>
+
+        <li><strong>Education:</strong> Teach students geographical concepts, spatial data, and digital mapping.</li>
+
+        <li><strong>Research:</strong> Organize and visualize location-based datasets for scientific projects.</li>
+    </ul>
+
+    <!-- CUSTOMIZATION -->
+    <div class="info-box">
+
+        <h3>Expand QGIS With Community Plugins</h3>
+
+        <p>
+            One of the biggest advantages of QGIS is its
+            extensibility. Users can explore community
+            plugins to add specialized tools and improve
+            their existing GIS workflows. This makes it
+            possible to adapt the application to different
+            professional and educational requirements.
+        </p>
+
+    </div>
+
+    <!-- PROS AND CONSIDERATIONS -->
+    <h2>Advantages and Things to Consider</h2>
+
+    <p>
+        QGIS offers extensive capabilities, but beginners
+        should understand that learning advanced GIS
+        workflows requires practice and familiarity
+        with geographical data.
+    </p>
+
+    <ul>
+        <li>Free and open-source software.</li>
+        <li>Supports Windows, macOS, and Linux.</li>
+        <li>Includes extensive map creation and editing tools.</li>
+        <li>Offers powerful spatial analysis capabilities.</li>
+        <li>Supports many geographical data formats.</li>
+        <li>Provides an extensive plugin ecosystem.</li>
+        <li>Advanced GIS tools may take time to learn.</li>
+        <li>Large datasets and complex analysis can require capable computer hardware.</li>
+    </ul>
+
+    <!-- CONCLUSION -->
+    <h2>Final Thoughts</h2>
+
+    <p>
+        QGIS is a versatile geographic information system
+        that provides powerful mapping, data editing,
+        and spatial analysis capabilities in one application.
+        Its open-source nature makes advanced GIS tools
+        accessible to students, professionals, researchers,
+        and organizations.
+    </p>
+
+    <p>
+        Whether you want to create informative maps,
+        analyze geographical datasets, study environmental
+        patterns, or prepare professional mapping reports,
+        QGIS provides a flexible platform for working
+        with location-based information.
+    </p>
+
+    <!-- PROMOTION -->
+    <section class="promo">
+
+        <h2>Discover More Useful Computer Software</h2>
+
+        <p>
+            Explore more software guides, desktop applications,
+            productivity tools, and technology resources.
+            Visit PC Setup to discover useful software
+            for your everyday computing needs.
+        </p>
+
+        <a href="http://pcsetup.click/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="promo-button">
+
+            Explore PC Setup →
+
+        </a>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    © 2026 PC Setup | Technology & Software Resources
+</footer>
+
+</div>
+
+</body>
+</html>
