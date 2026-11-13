@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft - Software and Technology</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f3f5f8;
+    color: #30343b;
+    line-height: 1.8;
+    padding: 30px 15px;
+}
+
+.microsoft-page {
+    max-width: 920px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.navigation {
+    padding: 20px 35px;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    width: 27px;
+    height: 27px;
+}
+
+.logo-grid span:nth-child(1) { background: #f25022; }
+.logo-grid span:nth-child(2) { background: #7fba00; }
+.logo-grid span:nth-child(3) { background: #00a4ef; }
+.logo-grid span:nth-child(4) { background: #ffb900; }
+
+.navigation strong {
+    font-size: 20px;
+    color: #353535;
+}
+
+.hero {
+    padding: 65px 40px;
+    background: linear-gradient(120deg, #f0f5fa, #ffffff);
+    border-bottom: 1px solid #e5e9ef;
+}
+
+.hero .small-title {
+    color: #0078d4;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #222;
+    margin: 12px 0;
+    letter-spacing: -2px;
+}
+
+.hero p {
+    max-width: 620px;
+    color: #5e6874;
+    font-size: 17px;
+}
+
+.color-line {
+    display: flex;
+    gap: 5px;
+    margin-top: 30px;
+    width: 170px;
+    height: 5px;
+}
+
+.color-line span {
+    flex: 1;
+}
+
+.color-line span:nth-child(1) { background: #f25022; }
+.color-line span:nth-child(2) { background: #7fba00; }
+.color-line span:nth-child(3) { background: #00a4ef; }
+.color-line span:nth-child(4) { background: #ffb900; }
+
+.content {
+    padding: 35px 40px;
+}
+
+.content h2 {
+    color: #242b33;
+    font-size: 24px;
+    margin: 27px 0 12px;
+}
+
+.content h2::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    background: #0078d4;
+    margin-top: 7px;
+}
+
+.content p {
+    color: #5f6872;
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 25px 0;
+}
+
+.product {
+    padding: 23px;
+    background: #fafbfd;
+    border: 1px solid #e5eaf0;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.product:hover {
+    border-color: #0078d4;
+    box-shadow: 0 6px 20px rgba(0,120,212,0.09);
+    transform: translateY(-3px);
+}
+
+.product .icon {
+    font-size: 28px;
+}
+
+.product h3 {
+    color: #0078d4;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.product p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.info-section {
+    padding: 25px;
+    background: #eef6fc;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.info-section h2 {
+    margin-top: 0;
+}
+
+.footer {
+    background: #252d36;
+    padding: 42px 20px;
+    text-align: center;
+    color: white;
+}
+
+.footer h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #c7d0d9;
+    margin-bottom: 23px;
+}
+
+.website-button {
+    display: inline-block;
+    background: #0078d4;
+    color: white;
+    text-decoration: none;
+    padding: 14px 35px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.website-button:hover {
+    background: #005a9e;
+    transform: translateY(-3px);
+}
+
+@media(max-width: 600px) {
+    .hero {
+        padding: 40px 22px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .content {
+        padding: 25px 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="microsoft-page">
+
+    <div class="navigation">
+        <div class="logo-grid">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <strong>Microsoft</strong>
+    </div>
+
+    <header class="hero">
+        <span class="small-title">TECHNOLOGY & INNOVATION</span>
+
+        <h1>Microsoft</h1>
+
+        <p>
+            Discover the World of Microsoft Software,
+            Productivity Applications, Cloud Services,
+            and Modern Technology.
+        </p>
+
+        <div class="color-line">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="content">
+
+        <h2>About Microsoft</h2>
+
+        <p>
+            Microsoft is one of the world's leading technology
+            companies, known for developing software, operating
+            systems, cloud platforms, and digital services.
+            Its products are used by individuals, businesses,
+            students, and organizations around the world.
+        </p>
+
+        <p>
+            From Windows operating systems to Microsoft 365
+            productivity applications, the company provides
+            a wide range of solutions for everyday computing,
+            communication, creativity, and business activities.
+        </p>
+
+        <h2>Popular Microsoft Products</h2>
+
+        <div class="product-grid">
+
+            <div class="product">
+                <div class="icon">🪟</div>
+                <h3>Windows</h3>
+                <p>
+                    A popular operating system designed
+                    for personal computers and professional use.
+                </p>
+            </div>
+
+            <div class="product">
+                <div class="icon">📊</div>
+                <h3>Microsoft Office</h3>
+                <p>
+                    Productivity applications for documents,
+                    spreadsheets, presentations, and more.
+                </p>
+            </div>
+
+            <div class="product">
+                <div class="icon">☁️</div>
+                <h3>Microsoft Azure</h3>
+                <p>
+                    Cloud computing services for application
+                    development and business infrastructure.
+                </p>
+            </div>
+
+            <div class="product">
+                <div class="icon">💬</div>
+                <h3>Microsoft Teams</h3>
+                <p>
+                    Communication and collaboration tools
+                    for meetings, messaging, and teamwork.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="info-section">
+            <h2>Why Microsoft Is Important</h2>
+
+            <p>
+                Microsoft plays an important role in modern
+                computing by providing tools for education,
+                business, software development, communication,
+                and entertainment. Its technology helps
+                people work, learn, and connect more efficiently.
+            </p>
+        </div>
+
+        <h2>Final Thoughts</h2>
+
+        <p>
+            Microsoft offers a broad technology ecosystem
+            that supports different computing needs.
+            Whether you are a student, professional,
+            developer, or everyday computer user,
+            its software and services provide many
+            useful digital solutions.
+        </p>
+
+    </main>
+
+    <footer class="footer">
+        <h2>Explore More Technology</h2>
+
+        <p>
+            Discover useful PC software, applications,
+            technology guides, and digital tools on our website.
+        </p>
+
+        <a href="http://pcsetup.click/"
+           class="website-button"
+           target="_blank"
+           rel="noopener noreferrer">
+           VISIT PC SETUP →
+        </a>
+    </footer>
+
+</div>
+
+</body>
+</html>
