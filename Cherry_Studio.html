@@ -1,0 +1,762 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cherry Studio Download - AI Desktop Assistant and Workspace</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #e9edf2;
+    color: #253244;
+    line-height: 1.8;
+}
+
+.main-wrapper {
+    max-width: 1150px;
+    margin: 35px auto;
+    padding: 18px;
+}
+
+/* HERO SECTION */
+.hero {
+    background: #101820;
+    color: white;
+    padding: 65px 45px;
+    border-radius: 5px 35px 5px 35px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #263b48;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    border: 1px solid rgba(65,225,218,.3);
+    right: -70px;
+    top: -100px;
+    box-shadow:
+        0 0 0 35px rgba(65,225,218,.05),
+        0 0 0 75px rgba(65,225,218,.04);
+}
+
+.hero-tag {
+    color: #55e5df;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 44px;
+    max-width: 720px;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero p {
+    color: #bdcbd5;
+    font-size: 17px;
+    max-width: 680px;
+}
+
+.hero-icon {
+    position: absolute;
+    right: 55px;
+    bottom: 15px;
+    font-size: 110px;
+    opacity: .3;
+}
+
+/* CONTENT */
+.article {
+    background: white;
+    padding: 40px;
+    margin-top: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(20,40,60,.06);
+}
+
+.article h2 {
+    font-size: 27px;
+    color: #172f45;
+    margin: 35px 0 15px;
+}
+
+.article h2:first-child {
+    margin-top: 0;
+}
+
+.article h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 4px;
+    background: #20bfc0;
+    margin-top: 9px;
+}
+
+.article p {
+    color: #647386;
+    font-size: 16px;
+    margin-bottom: 17px;
+}
+
+/* QUICK INFO */
+.quick-info {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.info {
+    padding: 22px;
+    background: #eff8fa;
+    border-radius: 10px;
+    border-top: 4px solid #20bfc0;
+}
+
+.info strong {
+    display: block;
+    color: #147d83;
+    font-size: 19px;
+}
+
+.info span {
+    font-size: 13px;
+    color: #728592;
+}
+
+/* AI FEATURE GRID */
+.ai-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 17px;
+    margin: 25px 0;
+}
+
+.ai-card {
+    background: #f3f7fa;
+    padding: 23px;
+    border-radius: 12px;
+    border: 1px solid #e1e9ee;
+    transition: .3s;
+}
+
+.ai-card:hover {
+    transform: translateY(-5px);
+    border-color: #20bfc0;
+    box-shadow: 0 8px 22px rgba(32,191,192,.12);
+}
+
+.ai-icon {
+    width: 48px;
+    height: 48px;
+    background: #d8f4f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+}
+
+.ai-card h3 {
+    color: #166a71;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.ai-card p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* DARK AI PANEL */
+.dark-panel {
+    background: linear-gradient(130deg,#14202c,#1a3947);
+    padding: 32px;
+    border-radius: 15px;
+    margin: 30px 0;
+    color: white;
+}
+
+.dark-panel h3 {
+    color: #58e3dc;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.dark-panel p {
+    color: #c7d8df;
+}
+
+/* MODEL LIST */
+.model-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0 30px;
+}
+
+.model {
+    padding: 10px 17px;
+    background: #edf7f8;
+    color: #176d75;
+    border: 1px solid #cce8e8;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* STEPS */
+.steps {
+    margin: 25px 0;
+}
+
+.step {
+    display: flex;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e8edef;
+}
+
+.step-number {
+    min-width: 45px;
+    height: 45px;
+    background: #163b48;
+    color: #5ce2d9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step h3 {
+    color: #176d75;
+    margin-bottom: 5px;
+}
+
+.step p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* HIGHLIGHT */
+.highlight {
+    background: #e9f8f6;
+    border-left: 5px solid #20bfc0;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 8px;
+}
+
+.highlight h3 {
+    color: #126e72;
+    margin-bottom: 8px;
+}
+
+/* LISTS */
+.article ul {
+    padding-left: 25px;
+    color: #647386;
+    margin-bottom: 20px;
+}
+
+.article li {
+    margin-bottom: 9px;
+}
+
+/* PROMOTION */
+.promo {
+    background: #101820;
+    color: white;
+    padding: 55px 25px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 15px;
+    border-bottom: 5px solid #20bfc0;
+}
+
+.promo h2 {
+    color: white;
+    margin: 0 0 12px;
+}
+
+.promo h2::after {
+    display: none;
+}
+
+.promo p {
+    color: #c0d0d8;
+}
+
+.promo-button {
+    display: inline-block;
+    background: #54e2d9;
+    color: #10272c;
+    text-decoration: none;
+    padding: 15px 38px;
+    margin-top: 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.promo-button:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 25px;
+    color: #85929d;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media(max-width:750px) {
+    .hero {
+        padding: 40px 25px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-icon {
+        font-size: 70px;
+        right: 15px;
+    }
+
+    .article {
+        padding: 23px;
+    }
+
+    .quick-info {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:480px) {
+    .ai-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+<!-- HERO -->
+<header class="hero">
+
+    <div class="hero-tag">ARTIFICIAL INTELLIGENCE WORKSPACE</div>
+
+    <h1>Cherry Studio: Your All-in-One AI Desktop Workspace</h1>
+
+    <p>
+        Explore a modern AI desktop application that brings
+        multiple language models, intelligent agents,
+        document management, image generation, and
+        productivity tools into one convenient workspace.
+    </p>
+
+    <div class="hero-icon">🍒</div>
+
+</header>
+
+<main class="article">
+
+    <!-- INTRODUCTION -->
+    <h2>What Is Cherry Studio?</h2>
+
+    <p>
+        Artificial intelligence is changing the way people
+        communicate, create content, research information,
+        and complete everyday computer tasks. However,
+        working with multiple AI platforms can become
+        inconvenient when users need to switch between
+        different websites and applications.
+    </p>
+
+    <p>
+        Cherry Studio is an AI desktop client designed
+        to bring different artificial intelligence models
+        and productivity features together in one interface.
+        It allows users to connect supported AI providers,
+        create customized assistants, manage conversations,
+        and work with documents.
+    </p>
+
+    <p>
+        The application also includes tools for AI image
+        generation, translation, knowledge management,
+        and agent-based workflows. It is available for
+        Windows, macOS, and Linux.
+    </p>
+
+    <!-- QUICK INFORMATION -->
+    <div class="quick-info">
+
+        <div class="info">
+            <strong>AI Workspace</strong>
+            <span>Software Category</span>
+        </div>
+
+        <div class="info">
+            <strong>Multi-Model</strong>
+            <span>AI Integration</span>
+        </div>
+
+        <div class="info">
+            <strong>Desktop App</strong>
+            <span>Windows, macOS & Linux</span>
+        </div>
+
+    </div>
+
+    <!-- FEATURES -->
+    <h2>Main Features of Cherry Studio</h2>
+
+    <p>
+        Cherry Studio combines several AI-powered
+        capabilities that can help users improve
+        productivity, manage information, and
+        explore creative possibilities.
+    </p>
+
+    <div class="ai-grid">
+
+        <div class="ai-card">
+            <div class="ai-icon">🤖</div>
+            <h3>AI Assistants</h3>
+            <p>
+                Create customized assistants with
+                different instructions, models,
+                and capabilities for specific tasks.
+            </p>
+        </div>
+
+        <div class="ai-card">
+            <div class="ai-icon">🔗</div>
+            <h3>Multiple AI Models</h3>
+            <p>
+                Connect supported AI providers and
+                switch between different models
+                from one desktop interface.
+            </p>
+        </div>
+
+        <div class="ai-card">
+            <div class="ai-icon">📚</div>
+            <h3>Knowledge Base</h3>
+            <p>
+                Import documents and other supported
+                sources to build searchable knowledge
+                collections for AI-assisted questions.
+            </p>
+        </div>
+
+        <div class="ai-card">
+            <div class="ai-icon">🎨</div>
+            <h3>AI Image Generation</h3>
+            <p>
+                Use supported image models to create
+                and edit visual content from
+                descriptive text prompts.
+            </p>
+        </div>
+
+        <div class="ai-card">
+            <div class="ai-icon">🌍</div>
+            <h3>Translation Tools</h3>
+            <p>
+                Translate text and supported documents
+                while comparing original and translated
+                content.
+            </p>
+        </div>
+
+        <div class="ai-card">
+            <div class="ai-icon">⚙️</div>
+            <h3>AI Agents and MCP</h3>
+            <p>
+                Build task-oriented agents and extend
+                their capabilities through supported
+                tools and MCP integrations.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- AI MODEL SECTION -->
+    <div class="dark-panel">
+
+        <h3>Connect Different AI Providers</h3>
+
+        <p>
+            One of Cherry Studio's important capabilities
+            is its support for multiple AI providers.
+            Users can configure compatible services
+            and select different models depending
+            on their requirements.
+        </p>
+
+        <p>
+            Supported integrations include providers
+            such as OpenAI, Anthropic, Google Gemini,
+            and DeepSeek. Local model connections
+            through supported tools such as Ollama
+            and LM Studio are also available.
+        </p>
+
+    </div>
+
+    <h2>AI Models and Integrations</h2>
+
+    <p>
+        Cherry Studio makes it easier to organize
+        different model connections. Rather than
+        maintaining separate desktop interfaces
+        for every compatible provider, users can
+        manage supported integrations within
+        the application.
+    </p>
+
+    <div class="model-list">
+
+        <span class="model">OpenAI</span>
+        <span class="model">Google Gemini</span>
+        <span class="model">Anthropic</span>
+        <span class="model">DeepSeek</span>
+        <span class="model">Ollama</span>
+        <span class="model">LM Studio</span>
+
+    </div>
+
+    <p>
+        Actual model availability depends on the
+        provider, account credentials, API access,
+        and application configuration.
+    </p>
+
+    <!-- WORKFLOW -->
+    <h2>How to Get Started with Cherry Studio</h2>
+
+    <p>
+        New users can begin by installing Cherry Studio
+        and connecting an AI model provider. The basic
+        setup process is straightforward, although
+        some providers require an API key.
+    </p>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="step-number">01</div>
+            <div>
+                <h3>Download and Install</h3>
+                <p>
+                    Visit the official Cherry Studio
+                    website and download the version
+                    compatible with your operating system.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">02</div>
+            <div>
+                <h3>Configure an AI Provider</h3>
+                <p>
+                    Open the model provider settings
+                    and configure a supported AI service
+                    using the required credentials.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">03</div>
+            <div>
+                <h3>Select an AI Model</h3>
+                <p>
+                    Synchronize the available models,
+                    select a suitable option, and
+                    enable it for your assistant.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">04</div>
+            <div>
+                <h3>Create Your First Conversation</h3>
+                <p>
+                    Open the chat interface, choose
+                    your configured assistant, and
+                    send your first message.
+                </p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">05</div>
+            <div>
+                <h3>Explore Advanced Tools</h3>
+                <p>
+                    Experiment with knowledge bases,
+                    translation, image generation,
+                    notes, and AI agents.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PRODUCTIVITY -->
+    <div class="highlight">
+
+        <h3>Improve Your Everyday Productivity</h3>
+
+        <p>
+            Cherry Studio can bring several AI-assisted
+            activities into one environment. Users can
+            work with documents, summarize information,
+            generate creative content, translate text,
+            and organize research without constantly
+            switching between separate applications.
+        </p>
+
+    </div>
+
+    <!-- WHO SHOULD USE -->
+    <h2>Who Should Use Cherry Studio?</h2>
+
+    <p>
+        Cherry Studio can be useful for different
+        groups of people who want to integrate
+        artificial intelligence into their workflows.
+    </p>
+
+    <ul>
+
+        <li><strong>Students:</strong> Organize study materials, summarize documents, and explore AI-assisted learning.</li>
+
+        <li><strong>Content Creators:</strong> Generate ideas, write drafts, translate content, and explore image creation.</li>
+
+        <li><strong>Developers:</strong> Work with coding assistants, AI models, and supported agent tools.</li>
+
+        <li><strong>Researchers:</strong> Build knowledge bases and ask questions about imported documents.</li>
+
+        <li><strong>Professionals:</strong> Organize everyday AI tasks and improve document-related workflows.</li>
+
+    </ul>
+
+    <!-- ADVANTAGES -->
+    <h2>Advantages and Things to Consider</h2>
+
+    <p>
+        Cherry Studio offers a broad collection of
+        features, but users should understand a few
+        important requirements before getting started.
+    </p>
+
+    <ul>
+
+        <li>Provides a centralized interface for supported AI models.</li>
+
+        <li>Includes customizable assistants and agent workflows.</li>
+
+        <li>Supports local knowledge bases and document-based questions.</li>
+
+        <li>Offers image generation and translation tools.</li>
+
+        <li>Supports Windows, macOS, and Linux.</li>
+
+        <li>Some cloud AI providers require paid API usage or subscriptions.</li>
+
+        <li>Local AI models may require additional downloads and suitable hardware.</li>
+
+        <li>Advanced integrations can require technical configuration.</li>
+
+    </ul>
+
+    <!-- CONCLUSION -->
+    <h2>Final Thoughts</h2>
+
+    <p>
+        Cherry Studio is a versatile desktop AI
+        workspace that combines model integration,
+        intelligent assistants, knowledge management,
+        image generation, translation, and productivity
+        tools within one application.
+    </p>
+
+    <p>
+        Its customizable environment makes it useful
+        for students, developers, content creators,
+        researchers, and professionals interested
+        in exploring different AI technologies.
+        Whether you want to compare AI models,
+        work with documents, or experiment with
+        automated workflows, Cherry Studio offers
+        a flexible platform worth exploring.
+    </p>
+
+    <!-- PROMOTION -->
+    <section class="promo">
+
+        <h2>Discover More Useful PC Software</h2>
+
+        <p>
+            Looking for more AI applications,
+            productivity tools, and computer software?
+            Visit PC Setup to explore more software
+            guides and technology resources.
+        </p>
+
+        <a href="http://pcsetup.click/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="promo-button">
+
+            Explore PC Setup →
+
+        </a>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    © 2026 PC Setup | Software & Technology Resources
+</footer>
+
+</div>
+
+</body>
+</html>
