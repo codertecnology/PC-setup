@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Capture Core: Screenshot, Editing and Screen Recording Software</title>
+  <meta name="description" content="Explore Capture Core, a Windows screenshot and screen recording application with image editing, OCR, clipboard history, and productivity features.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #101820;
+      color: #e8edf2;
+      line-height: 1.75;
+    }
+
+    .page {
+      max-width: 1080px;
+      width: 92%;
+      margin: 40px auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #172b3b, #263f50);
+      padding: 65px 45px;
+      border: 1px solid #3b596c;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "CC";
+      position: absolute;
+      right: 25px;
+      bottom: -65px;
+      font-size: 190px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #b8f2dc;
+      color: #123e35;
+      padding: 6px 15px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 43px;
+      line-height: 1.2;
+      color: #ffffff;
+      max-width: 750px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #c7d5df;
+      max-width: 740px;
+      font-size: 17px;
+    }
+
+    .section {
+      background: #192631;
+      border: 1px solid #304451;
+      border-radius: 16px;
+      padding: 32px;
+      margin-top: 25px;
+    }
+
+    .section h2 {
+      color: #a8f0d5;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      color: #cbd5dc;
+      margin-bottom: 14px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 17px;
+      margin-top: 22px;
+    }
+
+    .feature-card {
+      background: #223542;
+      border: 1px solid #3a5665;
+      border-radius: 12px;
+      padding: 23px;
+      transition: 0.25s;
+    }
+
+    .feature-card:hover {
+      border-color: #8de5c5;
+      transform: translateY(-4px);
+    }
+
+    .feature-card .number {
+      color: #8de5c5;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .feature-card h3 {
+      color: #ffffff;
+      font-size: 18px;
+      margin: 9px 0;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .info-list {
+      padding-left: 22px;
+      color: #cbd5dc;
+    }
+
+    .info-list li {
+      margin-bottom: 11px;
+    }
+
+    .steps {
+      margin-top: 20px;
+      display: grid;
+      gap: 13px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 16px;
+      background: #223542;
+      border-radius: 10px;
+    }
+
+    .step-number {
+      background: #a8f0d5;
+      color: #123e35;
+      min-width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      font-weight: bold;
+    }
+
+    .step p {
+      margin: 0;
+    }
+
+    .notice {
+      background: #2b3028;
+      border-left: 4px solid #c6d98a;
+      padding: 17px 20px;
+      border-radius: 7px;
+      margin-top: 20px;
+      color: #e1e7d5;
+    }
+
+    .faq {
+      border-bottom: 1px solid #344956;
+      padding: 18px 0;
+    }
+
+    .faq:last-child {
+      border-bottom: none;
+    }
+
+    .faq h3 {
+      color: #a8f0d5;
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .faq p {
+      margin: 0;
+    }
+
+    .cta {
+      margin-top: 28px;
+      background: linear-gradient(120deg, #a8f0d5, #c3e9e0);
+      color: #153b35;
+      padding: 45px 30px;
+      text-align: center;
+      border-radius: 20px;
+    }
+
+    .cta h2 {
+      font-size: 29px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 22px;
+      color: #31564f;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #153b35;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 7px;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background: #276b5d;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 10px;
+      color: #91a3ae;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      .page {
+        width: 94%;
+        margin: 20px auto;
+      }
+
+      .hero {
+        padding: 42px 24px;
+      }
+
+      .hero h1 {
+        font-size: 31px;
+      }
+
+      .hero::after {
+        font-size: 110px;
+      }
+
+      .section {
+        padding: 23px 19px;
+      }
+
+      .section h2 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <header class="hero">
+      <span class="eyebrow">Windows Productivity Tool</span>
+      <h1>Capture Core: More Than Just a Screenshot Application</h1>
+      <p>
+        Taking a screenshot is often only the beginning of a task. You may
+        need to edit an image, highlight important information, extract text,
+        or organize your captured content. Capture Core brings several of
+        these activities together in one Windows application.
+      </p>
+    </header>
+
+    <section class="section">
+      <h2>What Is Capture Core?</h2>
+
+      <p>
+        <strong>Capture Core</strong> is a Windows screenshot and productivity
+        application developed by Pifto Works. It is designed to help users
+        capture screen content, edit images, organize screenshots, and work
+        with information displayed on their monitors.
+      </p>
+
+      <p>
+        The application supports different capture methods, including
+        selected screen regions, active windows, full-screen captures,
+        and scrolling screenshots. It also includes tools for annotations,
+        image editing, and optical character recognition (OCR).
+      </p>
+
+      <p>
+        Beyond screenshots, Capture Core provides features such as clipboard
+        history, reusable text snippets, and cross-device synchronization.
+        Its Pro edition also adds advanced editing and video-related tools.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Main Features of Capture Core</h2>
+
+      <div class="feature-grid">
+
+        <article class="feature-card">
+          <span class="number">01 / CAPTURE</span>
+          <h3>Flexible Screenshot Capture</h3>
+          <p>
+            Capture a selected area, active window, full screen, or
+            scrolling content with different capture options.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <span class="number">02 / ANNOTATION</span>
+          <h3>Screenshot Editing</h3>
+          <p>
+            Add arrows, shapes, numbered markers, text, blur effects,
+            and redaction areas to explain or highlight information.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <span class="number">03 / OCR</span>
+          <h3>Text Recognition</h3>
+          <p>
+            Extract readable text from screenshots using built-in OCR
+            processing on your device.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <span class="number">04 / ORGANIZATION</span>
+          <h3>Screenshot Library</h3>
+          <p>
+            Keep captured images organized in a library and access
+            saved screenshots when needed.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <span class="number">05 / PRODUCTIVITY</span>
+          <h3>Clipboard History</h3>
+          <p>
+            Review previously copied content and use reusable text
+            snippets for frequently entered information.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <span class="number">06 / VIDEO</span>
+          <h3>Screen Recording</h3>
+          <p>
+            The Pro edition includes video recording options for
+            selected areas, application windows, or entire monitors.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <span class="number">07 / SYNC</span>
+          <h3>Device Synchronization</h3>
+          <p>
+            Pro supports direct device-to-device synchronization
+            for supported Windows and Android devices.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <span class="number">08 / WORKFLOW</span>
+          <h3>Useful Productivity Tools</h3>
+          <p>
+            Additional utilities include image combining, batch
+            operations, and tools for creating step-by-step documents.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How Capture Core Can Help Different Users</h2>
+
+      <p>
+        Capture Core can be useful in situations where users regularly
+        work with screen content, visual instructions, or digital information.
+      </p>
+
+      <ul class="info-list">
+        <li>
+          <strong>Students:</strong> Save lecture slides, capture online
+          learning materials, and highlight important details.
+        </li>
+        <li>
+          <strong>Office workers:</strong> Capture reports, prepare visual
+          instructions, and organize work-related screenshots.
+        </li>
+        <li>
+          <strong>Content creators:</strong> Annotate images and prepare
+          screenshots for tutorials or presentations.
+        </li>
+        <li>
+          <strong>Developers:</strong> Capture application interfaces,
+          highlight software issues, and document technical steps.
+        </li>
+        <li>
+          <strong>Remote teams:</strong> Share visual explanations and
+          organize screenshots for collaboration.
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>How to Use Capture Core</h2>
+
+      <p>
+        Getting started with Capture Core involves a few simple steps.
+        The available options may vary depending on the installed edition.
+      </p>
+
+      <div class="steps">
+
+        <div class="step">
+          <span class="step-number">1</span>
+          <p>
+            <strong>Download the application:</strong>
+            Visit the software's official website and obtain the
+            Windows installer.
+          </p>
+        </div>
+
+        <div class="step">
+          <span class="step-number">2</span>
+          <p>
+            <strong>Install Capture Core:</strong>
+            Open the downloaded installer and follow the setup instructions.
+          </p>
+        </div>
+
+        <div class="step">
+          <span class="step-number">3</span>
+          <p>
+            <strong>Select a capture method:</strong>
+            Choose a screen region, window, full screen, or scrolling capture.
+          </p>
+        </div>
+
+        <div class="step">
+          <span class="step-number">4</span>
+          <p>
+            <strong>Edit your screenshot:</strong>
+            Use available tools to add text, arrows, shapes, or blur
+            important areas.
+          </p>
+        </div>
+
+        <div class="step">
+          <span class="step-number">5</span>
+          <p>
+            <strong>Save and organize:</strong>
+            Save your finished image and access it through the
+            application's library.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Free and Pro Editions</h2>
+
+      <p>
+        Capture Core offers a free edition for everyday personal screenshot
+        tasks. It includes several capture methods, basic annotation,
+        OCR, clipboard history, and text snippets.
+      </p>
+
+      <p>
+        The Pro edition adds advanced features for users who need more
+        extensive editing, batch processing, synchronization, and
+        additional productivity options. A 14-day Pro trial is available
+        from inside the application.
+      </p>
+
+      <div class="notice">
+        <strong>Important:</strong> The free edition is intended for
+        personal use. The developer requires a Pro licence for business
+        and commercial use. Check the official website for current
+        licensing terms and feature availability.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>System Compatibility</h2>
+
+      <p>
+        Capture Core is currently available as a desktop application
+        for Windows 10 and Windows 11 (64-bit). Some synchronization
+        features also support Android devices.
+      </p>
+
+      <p>
+        The developer has discussed future platform expansion, but
+        users should check the official website for the latest
+        compatibility information before installation.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq">
+        <h3>1. What is Capture Core used for?</h3>
+        <p>
+          Capture Core is used to take screenshots, edit captured images,
+          extract text with OCR, organize content, and manage related
+          productivity tasks.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>2. Is Capture Core free?</h3>
+        <p>
+          Yes. It has a free edition for personal use. Advanced Pro
+          features can be tested through a 14-day trial.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>3. Does Capture Core support screen recording?</h3>
+        <p>
+          Yes. Video recording is available in the Pro edition, with
+          options for recording selected areas, windows, or monitors.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>4. Can Capture Core extract text from screenshots?</h3>
+        <p>
+          Yes. Its OCR feature recognizes text inside captured images
+          and processes it locally on the device.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>5. Does Capture Core add a watermark?</h3>
+        <p>
+          The developer states that saved screenshots do not receive
+          a watermark in either the Free or Pro edition.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>6. Can I synchronize screenshots between devices?</h3>
+        <p>
+          Pro includes direct device-to-device synchronization for
+          supported devices, without using an external cloud relay.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>7. Is Capture Core available for macOS?</h3>
+        <p>
+          The current desktop release is for Windows. Check the
+          developer's website for updates about other platforms.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Discover More Software and Technology Guides</h2>
+      <p>
+        Explore more computer software, useful applications, and
+        technology-related information. Visit our website to discover
+        additional software guides and resources.
+      </p>
+
+      <a
+        href="http://pcsetup.click/"
+        class="cta-button"
+        target="_blank"
+        rel="noopener noreferrer">
+        Explore More
+      </a>
+    </section>
+
+    <footer>
+      <p>Capture Core Software Guide | Screenshot and Productivity Tools</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
