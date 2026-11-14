@@ -1,0 +1,629 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Text to Speech Studio Offline by Illusanato - Features and Guide</title>
+  <meta name="description" content="Learn about Text to Speech Studio Offline by Illusanato. Explore its offline text-to-speech features, AI voices, MP3 export, language support, and system requirements.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f3ff;
+      color: #292344;
+      line-height: 1.75;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1080px;
+      margin: 35px auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #30215e, #6846a5);
+      color: #fff;
+      padding: 60px 42px;
+      border-radius: 25px 25px 70px 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "TTS";
+      position: absolute;
+      right: 20px;
+      bottom: -45px;
+      font-size: 150px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.07);
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e8dcff;
+      color: #4b287d;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      max-width: 750px;
+    }
+
+    .hero p {
+      color: #eee8ff;
+      max-width: 720px;
+      font-size: 17px;
+    }
+
+    .section {
+      background: #fff;
+      padding: 32px;
+      margin-top: 24px;
+      border-radius: 16px;
+      box-shadow: 0 7px 24px rgba(62, 42, 103, 0.06);
+    }
+
+    .section h2 {
+      color: #503487;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      margin-bottom: 14px;
+      color: #514b65;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 17px;
+      margin-top: 22px;
+    }
+
+    .feature {
+      background: #f4efff;
+      border: 1px solid #e5d9ff;
+      padding: 23px;
+      border-radius: 12px;
+    }
+
+    .feature h3 {
+      color: #593b91;
+      margin-bottom: 9px;
+      font-size: 18px;
+    }
+
+    .feature p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .list {
+      padding-left: 22px;
+      color: #514b65;
+    }
+
+    .list li {
+      margin-bottom: 10px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 13px;
+      margin-top: 20px;
+    }
+
+    .step {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding: 17px;
+      background: #f7f4ff;
+      border-radius: 10px;
+    }
+
+    .step-number {
+      min-width: 32px;
+      height: 32px;
+      background: #6846a5;
+      color: white;
+      text-align: center;
+      line-height: 32px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    .step p {
+      margin: 0;
+    }
+
+    .highlight {
+      background: #eee8ff;
+      border-left: 5px solid #7954bd;
+      padding: 18px;
+      border-radius: 7px;
+      margin-top: 18px;
+      color: #40315e;
+    }
+
+    .faq {
+      padding: 17px 0;
+      border-bottom: 1px solid #e9e3f4;
+    }
+
+    .faq:last-child {
+      border-bottom: none;
+    }
+
+    .faq h3 {
+      color: #593b91;
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .faq p {
+      margin: 0;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #e8dcff, #d9eaff);
+      padding: 42px 25px;
+      text-align: center;
+      margin-top: 26px;
+      border-radius: 18px;
+    }
+
+    .cta h2 {
+      color: #382365;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: #51446d;
+      max-width: 650px;
+      margin: 0 auto 22px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #503487;
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background: #30215e;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 10px;
+      color: #817894;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 94%;
+        margin: 18px auto;
+      }
+
+      .hero {
+        padding: 42px 23px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .hero::after {
+        font-size: 90px;
+      }
+
+      .section {
+        padding: 23px 19px;
+      }
+
+      .section h2 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header class="hero">
+      <span class="tag">Offline Text-to-Speech Software</span>
+
+      <h1>Text to Speech Studio – Offline by Illusanato</h1>
+
+      <p>
+        Turn written words into spoken audio with a desktop text-to-speech
+        application. Text to Speech Studio – Offline is designed to generate
+        synthetic speech directly on your Windows PC, without requiring
+        an internet connection or an online account.
+      </p>
+    </header>
+
+    <section class="section">
+      <h2>What Is Text to Speech Studio – Offline?</h2>
+
+      <p>
+        <strong>Text to Speech Studio – Offline</strong> is a Windows
+        application developed by Illusanato. It converts written text
+        into spoken audio using built-in synthetic voices.
+      </p>
+
+      <p>
+        The application is designed for users who want to create narration,
+        listen to written material, prepare voice content, or generate
+        audio files without uploading their text to an online service.
+      </p>
+
+      <p>
+        Unlike browser-based text-to-speech platforms, this software
+        performs its speech generation locally on the computer. It
+        includes a collection of voices and supports exporting generated
+        audio as MP3 files with subtitles.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Key Features of the Software</h2>
+
+      <div class="feature-grid">
+
+        <div class="feature">
+          <h3>Offline Speech Generation</h3>
+          <p>
+            Convert written content into spoken audio directly on your
+            computer without depending on an internet connection.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>Multiple AI Voices</h3>
+          <p>
+            Choose from a collection of 59 voices across nine languages,
+            including included studio voices and supported Windows voices.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>MP3 Export</h3>
+          <p>
+            Export generated speech as MP3 audio files, with subtitle
+            support for suitable projects.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>Multiple Character Voices</h3>
+          <p>
+            Assign different voices to individual characters when
+            preparing dialogue or multi-character narration.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>Voice Customization</h3>
+          <p>
+            Explore available voice settings and adjust speech
+            characteristics to suit your listening or narration needs.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>Voice Library</h3>
+          <p>
+            Browse available voices by name or language, filter options,
+            save favorites, and preview voices before using them.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>Local Processing</h3>
+          <p>
+            Speech generation runs on your computer's processor.
+            A dedicated graphics card is not required.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>No Account Required</h3>
+          <p>
+            The application does not require an account or subscription
+            to use its included desktop features.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Supported Languages and Voices</h2>
+
+      <p>
+        One of the useful features of Text to Speech Studio – Offline
+        is its collection of voices for different languages. The
+        application advertises 59 voices across nine languages.
+      </p>
+
+      <p>
+        Its included voice collection covers English (US and UK),
+        Spanish, French, Italian, Portuguese, Hindi, Japanese,
+        and Mandarin Chinese. It also lists compatible speech voices
+        already installed in Windows.
+      </p>
+
+      <p>
+        Users can browse the voice library, search by language or
+        voice name, filter available options, and listen to previews
+        before selecting a voice.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Why Choose an Offline Text-to-Speech Tool?</h2>
+
+      <p>
+        Online speech generators can be useful, but they often require
+        an internet connection and may involve uploading written content.
+        An offline application provides a different workflow.
+      </p>
+
+      <ul class="list">
+        <li>
+          <strong>Work without internet:</strong>
+          Generate speech even when your computer is disconnected.
+        </li>
+        <li>
+          <strong>Keep text on your PC:</strong>
+          Process written content locally rather than sending it
+          to an online conversion service.
+        </li>
+        <li>
+          <strong>Create narration:</strong>
+          Prepare audio for presentations, personal projects, and
+          educational material.
+        </li>
+        <li>
+          <strong>Listen to written content:</strong>
+          Convert articles, notes, and other text into spoken audio.
+        </li>
+        <li>
+          <strong>Choose different voices:</strong>
+          Compare available voices and select suitable options
+          for different types of content.
+        </li>
+      </ul>
+
+      <div class="highlight">
+        <strong>Privacy information:</strong>
+        The developer describes the application as offline-only,
+        with no account, telemetry, or network features. Generated
+        speech is synthetic and does not clone a real person's voice.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How to Use Text to Speech Studio – Offline</h2>
+
+      <p>
+        Getting started with the application is straightforward.
+        Follow these general steps to generate your first audio file.
+      </p>
+
+      <div class="steps">
+
+        <div class="step">
+          <span class="step-number">1</span>
+          <p>
+            <strong>Install the software:</strong>
+            Download the application from its official distribution
+            source and follow the Windows installation instructions.
+          </p>
+        </div>
+
+        <div class="step">
+          <span class="step-number">2</span>
+          <p>
+            <strong>Open the application:</strong>
+            Launch Text to Speech Studio – Offline on your computer.
+          </p>
+        </div>
+
+        <div class="step">
+          <span class="step-number">3</span>
+          <p>
+            <strong>Enter your text:</strong>
+            Type or paste the written content that you want to
+            convert into spoken audio.
+          </p>
+        </div>
+
+        <div class="step">
+          <span class="step-number">4</span>
+          <p>
+            <strong>Select a voice:</strong>
+            Browse the available voices and choose one that matches
+            your preferred language and narration style.
+          </p>
+        </div>
+
+        <div class="step">
+          <span class="step-number">5</span>
+          <p>
+            <strong>Preview the speech:</strong>
+            Listen to the selected voice and review how the text
+            sounds before exporting.
+          </p>
+        </div>
+
+        <div class="step">
+          <span class="step-number">6</span>
+          <p>
+            <strong>Export your audio:</strong>
+            Generate the speech and save the result as an MP3 file
+            with subtitles where supported.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>System Requirements</h2>
+
+      <p>
+        Text to Speech Studio – Offline is designed for Windows
+        desktop computers. Check the following requirements
+        before installing the application.
+      </p>
+
+      <ul class="list">
+        <li><strong>Operating System:</strong> Windows 10 version 1809 or newer.</li>
+        <li><strong>Architecture:</strong> 64-bit Windows.</li>
+        <li><strong>Storage:</strong> Approximately 1.2 GB of disk space.</li>
+        <li><strong>Graphics Card:</strong> No dedicated GPU required.</li>
+        <li><strong>Internet:</strong> Not required for application use after installation.</li>
+      </ul>
+
+      <div class="highlight">
+        <strong>Note:</strong> Make sure your PC has sufficient free
+        storage for installation and voice resources.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Pricing and Trial Information</h2>
+
+      <p>
+        Text to Speech Studio – Offline is a paid desktop application.
+        Its advertised licensing model includes the application's
+        features without separate feature tiers, locked panels,
+        or in-app purchases.
+      </p>
+
+      <p>
+        A free trial is available so users can test the voices and
+        application workflow before purchasing. Check the official
+        Microsoft Store listing for the latest price and trial terms.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq">
+        <h3>1. What does Text to Speech Studio – Offline do?</h3>
+        <p>
+          It converts written text into synthetic spoken audio
+          using voices available inside the Windows application.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>2. Does the software work without internet?</h3>
+        <p>
+          Yes. The application is designed to generate speech locally
+          without requiring an internet connection.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>3. How many voices are available?</h3>
+        <p>
+          The application advertises 59 voices across nine languages,
+          including its included studio voices and compatible
+          Windows-installed voices.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>4. Can I save generated speech as an MP3?</h3>
+        <p>
+          Yes. The software supports MP3 export and includes
+          subtitle export options.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>5. Does it clone real people's voices?</h3>
+        <p>
+          No. The developer explains that the application uses
+          synthetic voices and does not clone a real person's voice
+          from an audio recording.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>6. Is a powerful graphics card necessary?</h3>
+        <p>
+          No dedicated graphics card is required. Speech generation
+          runs on the computer's processor.
+        </p>
+      </div>
+
+      <div class="faq">
+        <h3>7. Which Windows versions are supported?</h3>
+        <p>
+          The listed requirement is Windows 10 version 1809 or newer
+          on a 64-bit system.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Explore More Software and Technology Guides</h2>
+
+      <p>
+        Looking for more useful computer applications, software
+        information, and technology guides? Visit our website
+        to discover additional resources.
+      </p>
+
+      <a
+        href="http://pcsetup.click/"
+        class="cta-button"
+        target="_blank"
+        rel="noopener noreferrer">
+        Visit Website
+      </a>
+    </section>
+
+    <footer>
+      <p>Text to Speech Studio – Offline | Software Information Guide</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
