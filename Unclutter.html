@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unclutter - Mac Productivity App</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #e9eee6;
+    color: #28352b;
+    line-height: 1.8;
+    padding: 25px 15px;
+}
+
+.article {
+    max-width: 920px;
+    margin: auto;
+    background: #fffef9;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(35, 60, 35, 0.10);
+}
+
+/* HERO SECTION */
+.hero {
+    padding: 55px 40px;
+    background: #dcebd7;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "✦";
+    position: absolute;
+    right: 45px;
+    top: 10px;
+    font-size: 170px;
+    color: rgba(55, 100, 60, 0.10);
+}
+
+.tag {
+    display: inline-block;
+    background: #315c3b;
+    color: white;
+    padding: 7px 17px;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #24452d;
+    margin: 17px 0 10px;
+    letter-spacing: -2px;
+}
+
+.hero p {
+    color: #536b56;
+    max-width: 620px;
+    font-size: 17px;
+}
+
+/* CONTENT */
+.content {
+    padding: 38px;
+}
+
+h2 {
+    font-size: 26px;
+    color: #315c3b;
+    margin: 32px 0 14px;
+}
+
+p {
+    color: #647064;
+    margin-bottom: 16px;
+}
+
+/* INTRO BOX */
+.intro {
+    background: #f0f5ec;
+    border-radius: 12px;
+    padding: 23px;
+    border: 1px solid #dce8d5;
+    margin: 25px 0;
+}
+
+.intro strong {
+    color: #315c3b;
+}
+
+/* FEATURE CARDS */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 17px;
+    margin: 25px 0;
+}
+
+.feature {
+    background: #ffffff;
+    border: 1px solid #e4eadd;
+    border-radius: 14px;
+    padding: 23px;
+    transition: 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    border-color: #79a77c;
+    box-shadow: 0 10px 22px rgba(49, 92, 59, 0.09);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    background: #e5f0df;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #315c3b;
+    font-size: 23px;
+    margin-bottom: 14px;
+}
+
+.feature h3 {
+    color: #304a34;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* USE CASES */
+.use-box {
+    background: #f8f7ef;
+    border-radius: 13px;
+    padding: 25px;
+    margin: 25px 0;
+}
+
+.use-box ul {
+    padding-left: 22px;
+    color: #647064;
+}
+
+.use-box li {
+    padding: 5px 0;
+}
+
+/* INFO STRIP */
+.info {
+    background: #315c3b;
+    color: white;
+    border-radius: 14px;
+    padding: 27px;
+    margin: 28px 0;
+}
+
+.info h3 {
+    color: #d8efce;
+    margin-bottom: 10px;
+}
+
+.info p {
+    color: #e2ebdf;
+    margin: 0;
+}
+
+/* CTA */
+.cta {
+    background: #e7f0e1;
+    padding: 40px 25px;
+    text-align: center;
+    border-radius: 16px;
+    margin-top: 35px;
+}
+
+.cta h2 {
+    color: #24452d;
+    margin-top: 0;
+}
+
+.cta p {
+    margin-bottom: 22px;
+}
+
+.btn {
+    display: inline-block;
+    background: #315c3b;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #203f29;
+    transform: translateY(-3px);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #263e2b;
+    color: #c9d9c5;
+    font-size: 13px;
+}
+
+@media(max-width: 600px) {
+    .hero {
+        padding: 40px 23px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .content {
+        padding: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<article class="article">
+
+    <header class="hero">
+        <span class="tag">MAC PRODUCTIVITY SOFTWARE</span>
+        <h1>Unclutter</h1>
+        <p>
+            Keep your Mac workspace organized with a convenient
+            place for notes, files, and clipboard history.
+        </p>
+    </header>
+
+    <main class="content">
+
+        <h2>What Is Unclutter?</h2>
+
+        <p>
+            Unclutter is a productivity application for macOS
+            designed to help users keep important information
+            organized and easily accessible. It provides a convenient
+            workspace for managing notes, files, and clipboard history
+            directly from the Mac desktop.
+        </p>
+
+        <p>
+            Instead of switching between multiple applications
+            to find small pieces of information, Unclutter brings
+            several useful tools together in one accessible space.
+            It can help make everyday computer work more organized
+            and efficient.
+        </p>
+
+        <div class="intro">
+            <strong>Quick Overview:</strong>
+            Unclutter combines three useful productivity features:
+            a notes area, a file storage space, and clipboard
+            history management.
+        </div>
+
+        <h2>Main Features of Unclutter</h2>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">✎</div>
+                <h3>Quick Notes</h3>
+                <p>
+                    Write down reminders, ideas, and important
+                    information in an easily accessible notes area.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">▣</div>
+                <h3>File Storage</h3>
+                <p>
+                    Keep frequently used files in a convenient
+                    desktop-accessible storage area.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⧉</div>
+                <h3>Clipboard History</h3>
+                <p>
+                    Access previously copied content and make
+                    copying and pasting more convenient.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⌨</div>
+                <h3>Keyboard Shortcuts</h3>
+                <p>
+                    Access productivity tools quickly using
+                    convenient keyboard controls.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">◈</div>
+                <h3>Organized Workspace</h3>
+                <p>
+                    Keep useful information together instead
+                    of spreading it across different windows.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⌘</div>
+                <h3>Mac Integration</h3>
+                <p>
+                    Designed specifically for macOS users
+                    who want a more organized desktop workflow.
+                </p>
+            </div>
+
+        </div>
+
+        <h2>How Can You Use Unclutter?</h2>
+
+        <p>
+            Unclutter can be useful in different everyday situations.
+            Whether you are studying, working on projects, or managing
+            files, its tools can help keep frequently used information
+            within easy reach.
+        </p>
+
+        <div class="use-box">
+            <ul>
+                <li>Save quick notes while working on your Mac.</li>
+                <li>Keep important files easily accessible.</li>
+                <li>Review previously copied text using clipboard history.</li>
+                <li>Organize small pieces of information in one place.</li>
+                <li>Reduce unnecessary switching between applications.</li>
+            </ul>
+        </div>
+
+        <h2>Why Is Unclutter Useful?</h2>
+
+        <p>
+            A cluttered desktop and scattered notes can make it
+            difficult to find important information. Unclutter
+            provides a simple way to bring notes, files, and copied
+            content together in a single workspace.
+        </p>
+
+        <div class="info">
+            <h3>A Better Organized Mac Experience</h3>
+            <p>
+                Unclutter is designed for people who want quick access
+                to everyday information without opening several
+                separate applications. It can be a useful addition
+                to a personal or professional Mac workflow.
+            </p>
+        </div>
+
+        <h2>Who Should Use Unclutter?</h2>
+
+        <p>
+            Unclutter may be helpful for students, writers,
+            office workers, developers, and anyone who regularly
+            works with notes, files, and copied text on a Mac.
+            Its usefulness depends on your personal workflow
+            and organizational needs.
+        </p>
+
+        <h2>Final Thoughts</h2>
+
+        <p>
+            Unclutter is a practical productivity application
+            for macOS users who want to manage everyday information
+            more conveniently. By bringing notes, files, and
+            clipboard history together, it offers a simple approach
+            to keeping a digital workspace organized.
+        </p>
+
+        <section class="cta">
+            <h2>Explore More Software</h2>
+            <p>
+                Discover more useful applications, software guides,
+                and technology resources on our website.
+            </p>
+
+            <a class="btn"
+               href="http://pcsetup.click/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Get More Information
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        Unclutter | Mac Productivity & Organization Software
+    </footer>
+
+</article>
+
+</body>
+</html>
