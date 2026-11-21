@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TextSniper - OCR Text Recognition for Mac</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eae8e1;
+    color: #22252b;
+    line-height: 1.8;
+    padding: 25px 15px;
+}
+
+.article {
+    max-width: 920px;
+    margin: auto;
+    background: #fffefa;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.10);
+}
+
+.hero {
+    background: #171b24;
+    padding: 55px 40px;
+    color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: "TXT";
+    position: absolute;
+    right: 25px;
+    bottom: 5px;
+    font-size: 100px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.05);
+}
+
+.tag {
+    color: #77a9ff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 15px 0;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: #77a9ff;
+}
+
+.hero p {
+    color: #c3c9d5;
+    max-width: 620px;
+    font-size: 16px;
+}
+
+.content {
+    padding: 38px;
+}
+
+h2 {
+    font-size: 26px;
+    color: #171b24;
+    margin: 30px 0 14px;
+    letter-spacing: -0.5px;
+}
+
+p {
+    color: #606773;
+    margin-bottom: 16px;
+}
+
+.highlight {
+    background: #edf3ff;
+    border-left: 5px solid #3778e5;
+    padding: 22px;
+    margin: 25px 0;
+    border-radius: 4px;
+    color: #39465a;
+}
+
+.highlight strong {
+    color: #245fca;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 25px 0;
+}
+
+.feature {
+    padding: 22px;
+    border: 1px solid #e4e6eb;
+    background: #ffffff;
+    border-radius: 9px;
+    transition: 0.3s;
+}
+
+.feature:hover {
+    border-color: #3778e5;
+    box-shadow: 0 8px 22px rgba(55,120,229,0.10);
+    transform: translateY(-4px);
+}
+
+.feature .icon {
+    width: 42px;
+    height: 42px;
+    background: #edf3ff;
+    color: #3778e5;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 13px;
+}
+
+.feature h3 {
+    font-size: 17px;
+    color: #22252b;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.steps {
+    counter-reset: step;
+    margin: 25px 0;
+}
+
+.step {
+    position: relative;
+    padding: 16px 18px 16px 60px;
+    background: #f4f5f7;
+    margin-bottom: 12px;
+    border-radius: 7px;
+}
+
+.step::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 17px;
+    top: 17px;
+    width: 27px;
+    height: 27px;
+    background: #3778e5;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 27px;
+    font-weight: bold;
+}
+
+.step strong {
+    color: #22252b;
+}
+
+.note {
+    background: #171b24;
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.note h3 {
+    color: #77a9ff;
+    margin-bottom: 9px;
+}
+
+.note p {
+    color: #c3c9d5;
+    margin: 0;
+}
+
+.cta {
+    margin-top: 35px;
+    padding: 40px 25px;
+    text-align: center;
+    background: #edf3ff;
+    border: 1px solid #d6e4ff;
+    border-radius: 10px;
+}
+
+.cta h2 {
+    margin-top: 0;
+    color: #1c3154;
+}
+
+.cta p {
+    margin-bottom: 22px;
+}
+
+.btn {
+    display: inline-block;
+    background: #3778e5;
+    color: white;
+    padding: 13px 29px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #171b24;
+    transform: translateY(-3px);
+}
+
+.footer {
+    background: #171b24;
+    color: #aab3c1;
+    text-align: center;
+    padding: 18px;
+    font-size: 13px;
+}
+
+@media(max-width: 600px) {
+    .hero {
+        padding: 40px 23px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .content {
+        padding: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<article class="article">
+
+    <header class="hero">
+        <span class="tag">SMART TEXT RECOGNITION</span>
+        <h1>Text<span>Sniper</span></h1>
+        <p>
+            Capture text from images, videos, documents, and
+            screen content with a convenient macOS OCR tool.
+        </p>
+    </header>
+
+    <main class="content">
+
+        <h2>What Is TextSniper?</h2>
+
+        <p>
+            TextSniper is a macOS application designed to extract
+            text from areas of your screen. It uses Optical Character
+            Recognition (OCR) technology to recognize written content
+            in images, videos, presentations, and other visual material.
+        </p>
+
+        <p>
+            Instead of manually typing words from a screenshot or
+            document, users can select a portion of their screen
+            and let TextSniper recognize the text. This can make
+            everyday computer tasks faster and more convenient.
+        </p>
+
+        <div class="highlight">
+            <strong>Quick Overview:</strong>
+            TextSniper is especially useful when you need to copy
+            text that normally cannot be selected, such as words
+            appearing inside an image, video, or scanned document.
+        </div>
+
+        <h2>Main Features of TextSniper</h2>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="icon">T</div>
+                <h3>OCR Text Recognition</h3>
+                <p>
+                    Recognizes text from selected areas of your
+                    screen and converts it into copyable content.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">⌖</div>
+                <h3>Screen Area Selection</h3>
+                <p>
+                    Select the specific part of the screen
+                    containing the text you want to capture.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">▣</div>
+                <h3>Image Text Extraction</h3>
+                <p>
+                    Extract written information from pictures,
+                    screenshots, and other visual content.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">▶</div>
+                <h3>Video Text Capture</h3>
+                <p>
+                    Capture visible text from video content
+                    when it appears on your screen.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">↗</div>
+                <h3>Copy to Clipboard</h3>
+                <p>
+                    Make recognized text available for pasting
+                    into documents, notes, and other applications.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">⌘</div>
+                <h3>Keyboard Shortcuts</h3>
+                <p>
+                    Use keyboard shortcuts to access text capture
+                    features more conveniently.
+                </p>
+            </div>
+
+        </div>
+
+        <h2>How Does TextSniper Work?</h2>
+
+        <p>
+            TextSniper is designed to make text extraction simple.
+            The general workflow involves selecting an area,
+            recognizing its text, and copying the result.
+        </p>
+
+        <div class="steps">
+
+            <div class="step">
+                <strong>Open the Application</strong>
+                <p>Launch TextSniper on your Mac.</p>
+            </div>
+
+            <div class="step">
+                <strong>Select the Screen Area</strong>
+                <p>Choose the part of the screen containing the text.</p>
+            </div>
+
+            <div class="step">
+                <strong>Recognize the Text</strong>
+                <p>The OCR feature processes the selected content.</p>
+            </div>
+
+            <div class="step">
+                <strong>Copy and Use</strong>
+                <p>Copy the recognized text and paste it wherever needed.</p>
+            </div>
+
+        </div>
+
+        <h2>Who Can Benefit From TextSniper?</h2>
+
+        <p>
+            TextSniper can be useful for different types of Mac users
+            who regularly work with information displayed on their
+            screens.
+        </p>
+
+        <ul style="padding-left:22px; color:#606773; margin-bottom:20px;">
+            <li>Students copying information from online lectures.</li>
+            <li>Writers collecting text from visual references.</li>
+            <li>Researchers working with screenshots and scanned content.</li>
+            <li>Office workers handling digital documents.</li>
+            <li>Professionals who frequently capture on-screen information.</li>
+        </ul>
+
+        <div class="note">
+            <h3>A Convenient Productivity Tool</h3>
+            <p>
+                TextSniper can reduce the need to manually type
+                text that appears in visual content. Its usefulness
+                depends on image quality, text clarity, and language
+                recognition support.
+            </p>
+        </div>
+
+        <h2>Why Choose TextSniper?</h2>
+
+        <p>
+            One of the main advantages of TextSniper is its focused
+            approach to screen-based text extraction. Rather than
+            requiring users to retype information, it provides
+            a direct way to capture text from selected screen areas.
+        </p>
+
+        <p>
+            For people who frequently work with screenshots,
+            online videos, images, and digital documents, this
+            functionality can be a helpful addition to a Mac
+            productivity workflow.
+        </p>
+
+        <h2>Final Thoughts</h2>
+
+        <p>
+            TextSniper is a useful OCR application for Mac users
+            who want a simple way to extract text from screen
+            content. Its screen selection and text recognition
+            features can help save time and make everyday tasks
+            more convenient.
+        </p>
+
+        <section class="cta">
+            <h2>Discover More Software</h2>
+            <p>
+                Explore more software information, useful tools,
+                and technology resources on our website.
+            </p>
+
+            <a class="btn"
+               href="http://pcsetup.click/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Get More Information
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        TextSniper | OCR & Productivity Software
+    </footer>
+
+</article>
+
+</body>
+</html>
