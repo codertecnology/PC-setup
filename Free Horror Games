@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Horror Games</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: #e6e6e6;
+    font-family: Arial, sans-serif;
+    padding: 30px 15px;
+}
+
+.horror-container {
+    max-width: 900px;
+    margin: auto;
+    background: #111;
+    border: 1px solid #3b1111;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(180, 0, 0, 0.15);
+}
+
+.horror-header {
+    background: linear-gradient(135deg, #1a0000, #350000, #080808);
+    padding: 45px 25px;
+    text-align: center;
+    border-bottom: 2px solid #8b0000;
+}
+
+.horror-header h1 {
+    color: #ff2424;
+    font-size: 38px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px #8b0000;
+    margin-bottom: 15px;
+}
+
+.horror-header p {
+    color: #c9c9c9;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.horror-content {
+    padding: 30px;
+}
+
+.horror-content h2 {
+    color: #ff4040;
+    margin: 25px 0 12px;
+    font-size: 24px;
+    border-left: 4px solid #b30000;
+    padding-left: 12px;
+}
+
+.horror-content p {
+    color: #c4c4c4;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.game-list {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.game-card {
+    background: #1b1b1b;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    border-color: #ff2929;
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.15);
+}
+
+.game-card h3 {
+    color: #ff5555;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.game-card p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.horror-note {
+    background: #240909;
+    border-left: 4px solid #ff2929;
+    padding: 18px;
+    margin: 25px 0;
+    border-radius: 5px;
+    color: #ddd;
+    line-height: 1.8;
+}
+
+.horror-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 16px 35px;
+    background: linear-gradient(135deg, #ff2525, #8b0000);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 6px;
+    box-shadow: 0 0 18px rgba(255, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.horror-button:hover {
+    background: #ff0000;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+    transform: scale(1.05);
+}
+
+.horror-footer {
+    background: #080808;
+    padding: 20px;
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    border-top: 1px solid #333;
+}
+
+@media (max-width: 600px) {
+    .horror-header h1 {
+        font-size: 29px;
+    }
+
+    .horror-content {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="horror-container">
+
+    <div class="horror-header">
+        <h1>FREE HORROR GAMES</h1>
+        <p>Enter the Darkness. Face Your Fears. Survive the Night.</p>
+    </div>
+
+    <div class="horror-content">
+
+        <h2>Discover the World of Horror Gaming</h2>
+
+        <p>
+            Are you ready to experience terrifying adventures, mysterious
+            locations, and unforgettable moments? Free horror games offer
+            players an exciting way to explore the dark side of gaming
+            without spending money.
+        </p>
+
+        <p>
+            From haunted houses and abandoned hospitals to creepy forests
+            and supernatural mysteries, horror games provide a thrilling
+            experience for players who enjoy suspense, exploration, and
+            unexpected surprises.
+        </p>
+
+        <h2>Popular Types of Free Horror Games</h2>
+
+        <div class="game-list">
+
+            <div class="game-card">
+                <h3>Survival Horror</h3>
+                <p>
+                    Find resources, avoid dangerous enemies, and stay alive
+                    in frightening environments.
+                </p>
+            </div>
+
+            <div class="game-card">
+                <h3>Psychological Horror</h3>
+                <p>
+                    Experience mind-bending stories, strange events, and
+                    disturbing mysteries.
+                </p>
+            </div>
+
+            <div class="game-card">
+                <h3>Multiplayer Horror</h3>
+                <p>
+                    Team up with friends or escape terrifying situations
+                    together in online horror adventures.
+                </p>
+            </div>
+
+            <div class="game-card">
+                <h3>Escape Horror</h3>
+                <p>
+                    Solve puzzles, discover hidden clues, and find your
+                    way out of creepy locations.
+                </p>
+            </div>
+
+        </div>
+
+        <h2>Why Play Free Horror Games?</h2>
+
+        <p>
+            Free horror games are a great choice for gamers who want
+            entertainment without purchasing expensive titles. Many
+            independent developers create unique horror experiences
+            that feature creative gameplay, atmospheric environments,
+            and exciting storylines.
+        </p>
+
+        <p>
+            Whether you enjoy playing alone in a dark room or teaming
+            up with friends, there are plenty of horror adventures
+            waiting to be explored.
+        </p>
+
+        <div class="horror-note">
+            <strong>Ready for the nightmare?</strong><br>
+            Explore more gaming information, discover exciting titles,
+            and find your next horror adventure.
+        </div>
+
+        <h2>Start Your Horror Adventure</h2>
+
+        <p>
+            Turn off the lights, put on your headphones, and prepare
+            yourself for a chilling gaming experience. The darkness
+            is waiting!
+        </p>
+
+        <center>
+            <a href="http://pcsetup.click/"
+               class="horror-button"
+               target="_blank"
+               rel="noopener noreferrer">
+               Get More Information
+            </a>
+        </center>
+
+    </div>
+
+    <div class="horror-footer">
+        Explore Gaming • Discover New Adventures • Enjoy the Fear
+    </div>
+
+</div>
+
+</body>
+</html>
